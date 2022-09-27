@@ -3,6 +3,7 @@
 Application web d’apprentissage de langue des signes française 
 
 [![Build Status](https://api.travis-ci.com/Mustapha-Smail/SignTalk.svg?branch=main)](https://app.travis-ci.com/github/Mustapha-Smail/SignTalk)
+[![Coverage Status](https://coveralls.io/repos/github/Mustapha-Smail/SignTalk/badge.svg)](https://coveralls.io/github/Mustapha-Smail/SignTalk)
 [![License](https://img.shields.io/github/license/mustapha-smail/signtalk.svg?style=flat-square)](LICENSE)
 [![Tag](https://img.shields.io/github/tag/mustapha-smail/signtalk.svg?label=tag&style=flat-square)](build.gradle)
 [![Release](https://img.shields.io/github/release/mustapha-smail/signtalk.svg?style=flat-square)](build.gradle)
