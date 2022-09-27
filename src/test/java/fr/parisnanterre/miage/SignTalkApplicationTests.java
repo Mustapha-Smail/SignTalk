@@ -1,13 +1,15 @@
 package fr.parisnanterre.miage;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+// @SpringBootTest
 class SignTalkApplicationTests {
 
-	// @Test
-	// void contextLoads() {
-	// }
+	@Test
+	void exampleTest() {
+		System.out.println("test should be passed!");
+	}
+
 
 }
