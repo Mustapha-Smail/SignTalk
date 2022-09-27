@@ -40,8 +40,7 @@ coveralls {
 
 sonarqube {
   properties {
-    property "sonar.projectKey", "Mustapha-Smail_SignTalk"
-	property "sonar.jacoco.reportPaths", "${buildDir}/jacoco/test.exec"
+    property "sonar.projectKey", "mustapha-smail:signtalk"
   }
 }
 
