@@ -1,4 +1,13 @@
 language: java
 jdk: oraclejdk17
+
+addons:
+  sonarcloud:
+    organization: "mustapha-smail" # the key of the org you chose at step #3
+    token:
+      secure: "FCa+8sUzo0o3b4z3nBI/UlBtXwozGpuDl0nkmtu7THTxQGEmoab6UUDx77FqB5No72Gb9Lyv5YwWKXHxYAkVXMQ+rAnJk/Uh0cx74t6QKS9LfIu/g+nKw2NV4AbEmGlJ1mjlXnz4PNM8wpXUseSNOxAKgUKAkdCHLTuU4Q7MoXMKflNnzUxHoQHC+dnzHjPunmtHGQ+ZO0pwlw7P01FY/7Eaxk4GaVh5210A6j5b83phXQ2VeRfdFxqemiJ0klgbo6bLzdpg4Kw/amITn3AhS0D4c9qHN5NZVH3SjYo996SfFsczasN1kNY+kIWA64qJMLvveWo1G9kLiqPknCf+6LLRfrHWtXcxEHdCdTehcHVHG4oK/q7gJKbk8an7/YiIJxxUeGPkjhQI6elRzFzvkpGF1ja9p+TFfzUrRJLXEZzHlpTYVinWaGb5XhBuFzCn9J28RfK7OXDu7xACTstxi8EYyGzbLyIcml+bk2hrxflcCCqYPdNRkE6MPu428gcrl/EAQK6fA9hKN75fHMhF3WgOVD5+y/mI8iAze5G9rmTSE6m0Dq8AWJ0PexDHxfZVjq58tKmc5fAR78pQzBphJpicXnwfYDJyVp5Bk75oAwNzfqoEspGmab4U90M5TyN4BV6V9bORU81+n2Bu88iuOk+temVWn9NtS+MmJ3GecwE=" # encrypted value of your token
+script:
+  - sonar-scanner
+
 after_success:
 - ./gradlew jacocoTestReport coveralls
