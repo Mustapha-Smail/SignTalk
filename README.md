@@ -60,7 +60,12 @@ git clone git@github.com:bkrtraore/SignTalkReact.git
 ```
 *NB: you need to setup an SSH key on your github account first*
 
-- Open a terminal, go to your application's frontend folder and run the application like so : 
+- Open a terminal, go to your application's frontend folder and run the following command to import node modules : 
+    ```shell
+     npm install 
+    ```
+
+- run the application like so : 
     ```shell
      npm start 
     ```
