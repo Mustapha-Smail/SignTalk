@@ -16,7 +16,7 @@ Application web d’apprentissage de langue des signes française
 *In order to build and run the application you need:* 
 - [JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - [Gradle 7.5.1](https://gradle.org/install/)
-- [MySQL](https://dev.mysql.com/downloads/installer/)
+- [MySQL](https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-8.0.30.0.msi)
 - [Node js (LTS)](https://nodejs.org/en/download/)
 
 ## Run the app locally 
@@ -51,7 +51,7 @@ create database signtalk;
     ```shell
      ./gradlew bootRun
     ```
-- Open a brower and go to [http://localhost:8000/api/v01/dictionary](http://localhost:8000/api/v01/dictionary)
+- Open a brower and go to [http://localhost:8080/api/v01/dictionary](http://localhost:8080/api/v01/dictionary)
 
 ### Frontend 
 
