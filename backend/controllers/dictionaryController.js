@@ -50,9 +50,9 @@ const getRandomWord = asyncHandler (async (req, res) => {
 //@route    GET /api/dictionary/quizz/lsf
 //@access   Public 
 const getQuizzLsf = asyncHandler (async (req, res) => {
-    const randomPairs = getRandomPair()
+    const randomPairs = await getRandomPair()
 
-    if(randomPairs){
+    if(!randomPairs){
         res.status(500)
         throw new Error('Internal Server Error')
     }
@@ -99,9 +99,9 @@ const getQuizzLsf = asyncHandler (async (req, res) => {
 //@route    GET /api/dictionary/quizz/fr
 //@access   Public 
 const getQuizzFr = asyncHandler (async (req, res) => {
-    const randomPairs = getRandomPair()
+    const randomPairs = await getRandomPair()
 
-    if(randomPairs){
+    if(!randomPairs){
         res.status(500)
         throw new Error('Internal Server Error')
     }
