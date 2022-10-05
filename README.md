@@ -37,9 +37,10 @@ cd frontend/ && npm install && cd .. && npm install
         ```
     - set the URI of your MongoDB Database : <br>
         *Follow this [link](https://www.mongodb.com/docs/atlas/getting-started/) to setup your mongoDB account* <br>
-        *your DB should be named `signtalk`*
+        *your DB should be named `signtalk`*<br>
+        *at some point you need to set up and IP adress; put 0.0.0.0/0*
         ```shell
-        MONGO_URI=<YOUR_MONGODB_URI>
+        MONGO_URI=YOUR_MONGODB_URI
         ```
 - Create another `.env` file in the `frontend` folder and set the URL of your backend : <br>
 *DO NOT change the variable name* 
@@ -51,6 +52,14 @@ REACT_APP_BE_URL=http://localhost:5000/
 This section explains to you how to run this application locally <br>
 
 - Open the terminal, go to the root folder of your app : 
+    - To import data sample to your DB : 
+        ```shell
+        npm run data:import
+        ```
+    - To destroy data sample from your DB : 
+        ```shell
+        npm run data:destory
+        ```
     - To run the app : 
         ```shell
         npm run start
