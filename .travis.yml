@@ -1,14 +1,8 @@
-language: java
-jdk: oraclejdk17
-
-addons:
-  sonarcloud:
-    organization: "mustapha-smail"
-    token:
-      secure: "P+zYQ8y+vrTZdRVLzF3PXH+NP6h5OE2kVzzVoamL6Ox0J3Qi6EYvcabliDcqfMbWWk1UnBv/hMaCQQbMbZTGxbq8ejmF9YahInplnOlYj+1PQX+XV/GDSsfMlUG9PbPOg1FrLJCjNr/t4Y8QzjlG5U4gipd63Cifw66JKe8zZk9w+5dES9FH9t2mcjnggh328Kc4gQOfoNHkfkPDH/RfgMnW8Ad+IodtuwVFvVTlXis24cD9c0ciMMYmrx3l8p73oSea5RWqGgYgKDoFji7utZtxG449OXW+4lTgdQ+aYohhdvks131AmJZ0v/C7oSoip6LNDguBFbNQQFuEIIbRUQImy99awokiY/fIh+MrinhtgX8QUXpDrSifYXdZ5WAF2sN4SIA8l4XqJwHth5sjiNoVfdL8XwXy7MIH4GsVul0/To9NvD+ZMfZckINNThTvvJ25bPrezc1so8Dl/WurFOtqETht50fmfS7Cmev2JbNPWjPDHJRTsMSIWAClG6IFAQbBIuIof5RHMdpGeGlvYA619h0zadkxIqzfCeWOBLK/GGUrVugpblFxi2gMcVx2+GZSNScDWNpBr1aBJnd0Mkgv/djvKxcyylBhlc+zDaDBp5E7Cpvjis8AoLnPmdpAcGXFnRgGqgiUpPQFG0Q9o0ZLKHjA1PjX5q+41E67NuA="
-
+language: node_js
+node_js: 
+  - 16
+before_install:
+  - npm install -g codecov
 script:
-  - ./gradlew sonarqube
-
-after_success:
-- ./gradlew jacocoTestReport coveralls
+  - npm run test
+  - codecov

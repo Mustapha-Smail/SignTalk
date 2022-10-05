@@ -1,0 +1,10 @@
+.st__brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.st__brand div {
+    max-width: 150px;
+    min-width: 120px;
+}
