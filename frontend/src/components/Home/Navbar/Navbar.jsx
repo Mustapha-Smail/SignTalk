@@ -18,7 +18,7 @@ const Navbar = () => {
           <p><Link to='/'>Accueil</Link></p>
           <p><Link to='/learn'>Apprendre</Link></p>
           <p><Link to='/alphabet'>Alphabet</Link></p>
-          <p><Link to='/'>Quizz</Link></p>
+          <p><Link to='/quizz'>Quizz</Link></p>
           <p><Link to='/'>Nous contacter</Link></p>
         </div>
       </div>
@@ -32,7 +32,7 @@ const Navbar = () => {
             <p><Link to='/'>Accueil</Link></p>
             <p><Link to='/learn'>Apprendre</Link></p>
             <p><Link to='/alphabet'>Alphabet</Link></p>
-            <p><Link to='/'>Quizz</Link></p>
+            <p><Link to='/quizz'>Quizz</Link></p>
             <p><Link to='/'>Nous contacter</Link></p>
           </div>
         </div>

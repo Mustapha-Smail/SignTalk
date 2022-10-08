@@ -1,0 +1,15 @@
+.divQuizzButton{
+    margin: 0 auto;
+    width: 50%;
+}
+
+
+.QuizzButton {
+
+    padding : 2rem 10rem;
+    color: white;
+    /* margin: 1rem 0; */
+    border-radius: 25px;
+    background: rgb(170,170,173);
+    background: linear-gradient(90deg, rgba(170,170,173,1) 0%, rgba(197,197,221,1) 46%, rgba(0,212,255,1) 100%);
+}

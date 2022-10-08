@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
-import { Alphabet, Home, Learn } from './screens'
+import { Alphabet, Home, Learn, Quizz } from './screens'
 
 const App = () => {
   return (
@@ -9,6 +9,7 @@ const App = () => {
       <Routes>
         <Route path='*' element={<Home/>}></Route>
         <Route path='/' element={<Home/>}></Route>
+        <Route path='/quizz' element={<Quizz/>}></Route>
         <Route path='/alphabet' element={<Alphabet/>}></Route>
 
         {/* ROUTE WITH OPTIONAL PARAMS v6 */}
