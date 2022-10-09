@@ -14,10 +14,8 @@ const LsfHeader = () => {
 
     const getData = async () => {
         try {
-            // get random id word 
             const response = await axios.get('/api/dictionary/random')
             const id = response.data.id
-            // get word data 
             const {data}  = await axios.get(`api/dictionary/${id}`)
             setWord(data)
 

@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import { dictionary } from './data/dictionary.js'
 
 import Dictionary from './models/Dictionary.js'
+import Alphabet from './models/Alphabet.js'
 
 import connectDB from './config/db.js'
 
@@ -14,8 +15,10 @@ connectDB()
 const importData = async () => {
     try {
         await Dictionary.deleteMany()
+        await Alphabet.deleteMany()
 
         const createdDictionary = await Dictionary.insertMany(dictionary)
+        const createdAlphabet = await Alphabet.insertMany(dictionary)
 
         console.log('Data Imported!');
         process.exit()
@@ -28,6 +31,7 @@ const importData = async () => {
 const destroyData = async () => {
     try {
         await Dictionary.deleteMany()
+        await Alphabet.deleteMany()
 
         console.log('Data Destroyed!');
         process.exit()
