@@ -1,0 +1,32 @@
+h3 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 28px;
+  width: 100%;
+  text-align: start;
+}
+
+.alphabet-list {
+  /* elements positions */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 1rem 0 0 1rem;
+}
+
+.alphabet-list ul li {
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 16px;
+}
+.alphabet-list ul li:hover {
+  color: var(--color-subtext);
+}
+
+.alphabet-list ul li:not(:last-child) {
+  margin-bottom: 0.2rem;
+}
