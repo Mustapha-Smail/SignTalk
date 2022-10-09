@@ -4,7 +4,7 @@ import { RiCloseLine } from 'react-icons/ri'
 import { TiSortAlphabeticallyOutline } from 'react-icons/ti'
 import { AlphabetMenu } from '../../../components'
 
-const AlphabetMenuMobile = ({ alphabet, toggleMenu, onClickFirstMethod, onClickSecondMethod }) => {
+const AlphabetMenuMobile = ({ toggleMenu, onClickFirstMethod, onClickSecondMethod }) => {
   return (
     <>
       <TiSortAlphabeticallyOutline color="#fff" size={27} onClick={onClickSecondMethod} />
@@ -14,7 +14,7 @@ const AlphabetMenuMobile = ({ alphabet, toggleMenu, onClickFirstMethod, onClickS
               <RiCloseLine color="#fff" size={27} onClick={onClickSecondMethod} />
           </div>
           <div className='st__grid-menu-content'>
-              <AlphabetMenu alphabet={alphabet} onClickFirstMethod={onClickFirstMethod} onClickSecondMethod={onClickSecondMethod} />
+              <AlphabetMenu onClickFirstMethod={onClickFirstMethod} onClickSecondMethod={onClickSecondMethod} />
           </div>
       </div>
     </>
