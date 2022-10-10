@@ -31,3 +31,4 @@ export { default as AlphabetMenuMobile } from './Alphabet/AlphabetMenuMobile/Alp
  * Quizz Elements 
  */
 export { default as QuizzButton } from './Quizz/QuizzButton/QuizzButton.jsx'
+export { default as QuizzLSFContainer } from './Quizz/QuizzLSF/QuizzLSFContainer.jsx'
