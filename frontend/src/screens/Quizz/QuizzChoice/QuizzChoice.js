@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, QuizzButton } from '../../components'
+import { Navbar, QuizzButton } from '../../../components'
 
 const Quizz = () => {
   return (

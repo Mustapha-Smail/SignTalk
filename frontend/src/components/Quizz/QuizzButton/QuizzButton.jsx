@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './quizzButton.css';
 
-const QuizzButton = ({ text }, { page }) => {
+const QuizzButton = ({ text , page }) => {
 
     const navigate = useNavigate()
 
