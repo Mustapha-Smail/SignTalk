@@ -4,7 +4,7 @@
 :revnumber: v.0.1
 :revdate: 26.09.2022
 :revremark: First draft
-:imagesdir: ../frontend/public/images
+:imagesdir: ./images
 
 == Partie 1 : Présentation 
 
