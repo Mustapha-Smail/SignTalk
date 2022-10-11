@@ -42,6 +42,7 @@ Pour pallier ces problématiques, SignTalk est une application web qui permet de
 ** Dictionnaire de langues des signes française (Elix) 
 ** Apprentissage vidéo de la LSF (HiFive) 
 * Personas et fonctionnalités de leur point de vue (haut niveau)  
+** Apprentissage de l'alphabet de la LSF
 ** Affichage aléatoire d’une image/vidéo de LSF, avec sa traduction en langue française en dessous. 
 ** Quizz de LSF vers langue française (1 image et 4 choix de mots en langue française)  et inversement
 ** Chercher la traduction en LSF d’un mot en langue française
@@ -78,14 +79,17 @@ Pour pallier ces problématiques, SignTalk est une application web qui permet de
 
 image:feature-random.png[Wireframe_Random,300,300]
 
+=== Seconde itération
+
 * Feature - Alphabet
 
 image:feature-alphabet.png[Wireframe_alphabet,300,300]
 
-* Feature - 4 images / 1 words
+* Feature - 4 images / 1 word
 
 image:feature-4images1word.png[Wireframe_4images1word,300,300]
 
 * Feature - 4 words / 1 image 
-// image:.png[Wireframe_4images1word,100,100]
+
+image:feature-4words1image.png[Wireframe_4words1image,300,300]   
 
