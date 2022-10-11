@@ -8,9 +8,10 @@ import './QuizzFR.css';
 
 const QuizzFR = () => {
 
+  const [checked, setChecked] = useState(false)
   const [quizz, setQuizz] = useState({
     word: 'word',
-    multimedia: [
+    multimedias: [
 
         {type: 'image', 
          url: '/images/header-img.png'
@@ -46,14 +47,15 @@ useEffect(() => {
   getData()
 }, [])
 
-const notif = (answer) => {
-  let status = 'incorrect'; 
-  if (answer === quizz.correctMultimedia) {
+const notif = (e) => {
+  let status = 'incorrect';
+  const answer = e.target.value
+  if (answer === quizz.correctMultimedia.url) {
       status = 'correct'
   }
   swal({
-      title: status === 'correct' ? "Bien joué!" : "Oh non :-(",
-      text: status === 'correct' ? "Tu as choisi la bonne réponse!" : "Tu as choisi la mauvaise réponse!",
+      title: status === 'correct' ? "Bien joué !" : "Oh non :-(",
+      text: status === 'correct' ? "Tu as choisis la bonne réponse !" : "Tu as choisis la mauvaise réponse ! Reéssaies !",
       icon: status === 'correct' ? "success" : "error",
       button: {
           text: "Suivant",
@@ -66,25 +68,28 @@ const notif = (answer) => {
       closeOnEsc: false,
   }).then(()=>{
       getData()
+      setChecked(false) 
   });
 }
 
 return (
   <>
-    <div className="st__quizz">
-      <div className="st__quizz-image">
-        {quizz.multimedia.map((image, index)=> (
-          <div className={`st__quizz-images${index}`} onClick={() => notif(image)}>
-            <ImageContainer imgSrc={quizz.multimedia.url} imgAlt={quizz.multimedia.type}/>
-          </div>
-        ))}
-      </div>
-      <div className="st__quizz-content">
+    <div className="quizzfr__grid">
+      <div className="quizzfr__content">
           <div className="st__quizz-word">
             <TextContainer content={quizz.word}/>
           </div>
       </div>
-      <div className="st__quizz-button">
+      <div className="quizzfr__media" onChange={(e) => notif(e)}>
+        {quizz.multimedias.map((image, index)=> (
+          <div className={`quizzfr__media-img${index} media-center`}>
+            <ImageContainer imgSrc={image.url} imgAlt={image.type} className={"quizzfr__img"}/>
+            <input name={image.url} checked={checked} type={'radio'} value={image.url} onChange={(e) => notif(e)}/>
+          </div>
+        ))}
+      </div>
+
+      <div className="quizzfr__button">
         <ButtonContainer onClickMethod={getData}/>
       </div>
     </div>

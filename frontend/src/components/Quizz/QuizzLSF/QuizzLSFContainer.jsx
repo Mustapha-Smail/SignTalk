@@ -37,8 +37,8 @@ const QuizzLSFContainer = () => {
         status = 'correct'
     }
     swal({
-        title: status === 'correct' ? "Bien joué!" : "Oh non :-(",
-        text: status === 'correct' ? "Tu as choisi la bonne réponse!" : "Tu as choisi la mauvaise réponse!",
+        title: status === 'correct' ? "Bien joué !" : "Oh non :-(",
+        text: status === 'correct' ? "Tu as choisis la bonne réponse !" : "Tu as choisis la mauvaise réponse ! Reéssaies !",
         icon: status === 'correct' ? "success" : "error",
         button: {
             text: "Suivant",
