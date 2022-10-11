@@ -1,0 +1,43 @@
+.divQuizzButton {
+    margin: 3rem auto;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.QuizzButton {
+    clear: both;
+    white-space: nowrap;
+    padding: 4rem 15rem;
+    color: white;
+    font-size: 2rem;
+    border: 0px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(0, 40, 83, 1) 0%, rgba(217, 217, 217, 1) 100%);
+}
+
+.QuizzButton {
+    clear: both;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 4rem 15rem;
+    color: white;
+    font-size: 2rem;
+    border: 0px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(0, 40, 83, 1) 0%, rgba(217, 217, 217, 1) 100%);
+}
+
+@media(max-width:767px) {
+    .QuizzButton {
+        padding: 10% 40%;
+    }
+}
+
+@media(max-width:496px) {
+    .QuizzButton {
+        padding: 4% 16%;
+    }
+}

@@ -26,3 +26,9 @@ export { default as LSFHeader } from './Learn/LsfHeader/LsfHeader.jsx'
 export { default as AlphabetContainer } from './Alphabet/AlphabetContainer/AlphabetContainer.jsx'
 export { default as AlphabetMenu } from './Alphabet/AlphabetMenu/AlphabetMenu.jsx'
 export { default as AlphabetMenuMobile } from './Alphabet/AlphabetMenuMobile/AlphabetMenuMobile.jsx'
+
+/**
+ * Quizz Elements 
+ */
+export { default as QuizzButton } from './Quizz/QuizzButton/QuizzButton.jsx'
+export { default as QuizzLSFContainer } from './Quizz/QuizzLSF/QuizzLSFContainer.jsx'
