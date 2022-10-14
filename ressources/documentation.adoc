@@ -4,7 +4,7 @@
 :revnumber: v.0.1
 :revdate: 26.09.2022
 :revremark: First draft
-:imagesdir: ./images
+:imagesdir: ../ressources/images
 
 == Partie 1 : Présentation 
 
@@ -84,6 +84,7 @@ image:feature-random.png[Wireframe_Random,300,300]
 * Feature - Alphabet
 
 image:feature-alphabet.png[Wireframe_alphabet,300,300]
+
 
 * Feature - 4 images / 1 word
 
