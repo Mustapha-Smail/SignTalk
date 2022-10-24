@@ -1,0 +1,37 @@
+@startuml
+
+package models {
+class Alphabet
+class Dictionary
+class Lsf
+
+class Alphabet {
+    name : String
+    lsf : Lsf
+
+    getAlphabet() : Alphabet
+    getAlphabetById() : Letter
+}
+
+class Dictionary {
+    name : String
+    lsf : Lsf
+
+    getDictionary() : Dictionary
+    getDictionaryById() : Dictionary
+    getRandomWord() : Word
+    getQuizzLsf() : Quizz
+    getQuizzFr() : Quizz
+}
+
+class Lsf{
+    type : String
+    url : String
+}
+}
+
+Lsf <-- Alphabet
+Lsf <-- Dictionary
+
+
+@enduml
