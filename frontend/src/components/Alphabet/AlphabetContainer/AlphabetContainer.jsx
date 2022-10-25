@@ -18,7 +18,6 @@ const Alphabet = () => {
         try {
             const { data } = await axios.get(`/api/alphabet/${id}`)
             setLetter(data)
-            console.log(letter)
         } catch (error) {
             console.error(error)
         }
@@ -41,7 +40,7 @@ const Alphabet = () => {
                         <AlphabetMenu onClickFirstMethod={getLetter} />
                     </div>
                     <div className='st__grid-lsf'>
-                        <ImageContainer imgSrc={letter.lsf.url} imgAlt={letter.name} />
+                        <ImageContainer imgSrc={letter.lsf.url} imgAlt={letter.name} type={letter.lsf.type}/>
                         <TextContainer content={`${(letter.name).toUpperCase()} - ${(letter.name).toLowerCase()}`}/>
                     </div>
                 </div>
