@@ -3,7 +3,7 @@ import { getAlphabet, getAlphabetById, getAlphabetByWord } from '../controllers/
 const router = express.Router()
 
 router.route('/').get(getAlphabet)
+router.route('/word/:word').get(getAlphabetByWord)
 router.route('/:id').get(getAlphabetById)
-router.route('/:word').get(getAlphabetByWord)
 
 export default router
