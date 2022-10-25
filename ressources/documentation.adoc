@@ -128,9 +128,33 @@ Cette fonctionnalité permet à l'utilisateur d'effectuer la recherche d'un mot 
 
 Mise en service le 26/10/2022
 
+image:feature-decomposition.png[Wireframe_decomposition,300,300]
 
 
 Cette fonctionnalité permet à l'utilisateur de décomposer un mot en lettre et d'afficher la traduction en LSF de chacune de ces lettres.
 
 
 
+
+
+=== Diagrames de séquence
+
+* Diagramme de la 1 ère itération
+
+image:Diagram.png[Wireframe_decomposition,300,300]
+
+* Diagramme de la feature 4 images un mot
+
+image:Diagram-QuizA.png[Wireframe_decomposition,300,300]
+
+* Diagramme de la feature 1 images 4 mot
+
+image:Diagram-Quiz2.png[Wireframe_decomposition,300,300]
+
+* Diagramme de la feature de recherche
+
+image:Diagram-recherche.png[Wireframe_decomposition,300,300]
+
+* Diagramme de la feature de decomposition
+
+image:Diagram-decomposition.png[Wireframe_decomposition,300,300]
