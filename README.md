@@ -28,9 +28,9 @@ git clone git@github.com:Mustapha-Smail/signtalk.git
 
 - Go to your app folder, and run this command: 
 ```shell
-cd frontend/ && npm install && cd .. && npm install 
+cd frontend/ && npm install --force && cd .. && npm install 
 ```
-
+*we use force because it won't install some dependecies*
 - Create a file name `.env` in your root folder:
     - set the port you want your backend to run in : <br>
         *By default it's 5000* 
@@ -50,6 +50,8 @@ cd frontend/ && npm install && cd .. && npm install
 *DO NOT change the variable name* 
 ```shell
 REACT_APP_BE_URL=http://localhost:5000/
+REACT_APP_CLOUD_NAME=dugouekf6
+REACT_APP_CLOUD_URL=v1666616632/jauvert_572/
 ```
 ## Run the app locally 
 
