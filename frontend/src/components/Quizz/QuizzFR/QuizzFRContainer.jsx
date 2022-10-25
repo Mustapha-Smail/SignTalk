@@ -11,25 +11,8 @@ const QuizzFR = () => {
   const [checked, setChecked] = useState(false)
   const [quizz, setQuizz] = useState({
     word: 'word',
-    multimedias: [
-
-        {type: 'image', 
-         url: '/images/header-img.png'
-        },
-
-        {type: 'image', 
-         url: '/images/header-img.png'
-        },
-
-        {type: 'image', 
-         url: '/images/header-img.png'
-        },
-
-        {type: 'image', 
-         url: '/images/header-img.png'
-        }
-    ],
-    correctMultimedia: 'word_3'
+    multimedias: [],
+    correctMultimedia: 'videoId'
     
   })
 
@@ -50,7 +33,7 @@ useEffect(() => {
 const notif = (e) => {
   let status = 'incorrect';
   const answer = e.target.value
-  if (answer === quizz.correctMultimedia.url) {
+  if (answer === quizz.correctMultimedia) {
       status = 'correct'
   }
   swal({
@@ -81,10 +64,10 @@ return (
           </div>
       </div>
       <div className="quizzfr__media" onChange={(e) => notif(e)}>
-        {quizz.multimedias.map((image, index)=> (
+        {quizz.multimedias.map((video, index)=> (
           <div className={`quizzfr__media-img${index} media-center`}>
-            <ImageContainer imgSrc={image.url} imgAlt={image.type} className={"quizzfr__img"}/>
-            <input name={image.url} checked={checked} type={'radio'} value={image.url} onChange={(e) => notif(e)}/>
+            <ImageContainer videoId={video} className={"quizzfr__img"}/>
+            <input name={video} checked={checked} type={'radio'} value={video} onChange={(e) => notif(e)}/>
           </div>
         ))}
       </div>

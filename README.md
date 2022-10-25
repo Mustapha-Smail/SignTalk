@@ -2,13 +2,17 @@
 
 Application web d’apprentissage de langue des signes française
 
-[![Build Status](https://app.travis-ci.com/Mustapha-Smail/SignTalk.svg?branch=main)](https://app.travis-ci.com/Mustapha-Smail/SignTalk)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Mustapha-Smail/SignTalk/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Mustapha-Smail/SignTalk/tree/main)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/342e82a4609c4778ae54301239cea412)](https://www.codacy.com/gh/Mustapha-Smail/SignTalk/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Mustapha-Smail/SignTalk&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/Mustapha-Smail/SignTalk/branch/main/graph/badge.svg?token=ECSVYA6ILM)](https://codecov.io/gh/Mustapha-Smail/SignTalk)
 [![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/Mustapha-Smail/SignTalk?style=flat-square)](https://codeclimate.com/github/Mustapha-Smail/SignTalk/maintainability)
 [![License](https://img.shields.io/github/license/mustapha-smail/SignTalk.svg?style=flat-square)](LICENSE)
 [![Tag](https://img.shields.io/github/tag/mustapha-smail/SignTalk.svg?label=tag&style=flat-square)](https://github.com/Mustapha-Smail/SignTalk/releases/latest)
 [![Release](https://img.shields.io/github/release/mustapha-smail/SignTalk.svg?style=flat-square)](https://github.com/Mustapha-Smail/SignTalk/releases/latest)
+
+###### Outdated
+[![Build Status](https://app.travis-ci.com/Mustapha-Smail/SignTalk.svg?branch=main)](https://app.travis-ci.com/Mustapha-Smail/SignTalk)
+
 
 ## Requirments 
 *In order to build and run the application you need:* 
