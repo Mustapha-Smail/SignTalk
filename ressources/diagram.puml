@@ -1,0 +1,35 @@
+@startuml
+
+package SignTalk_DB {
+   
+    class Lsf {
+        type: string
+        url: string
+    }
+
+    class Alphabet {
+        name: string
+        lsf: Lsf
+        getAlphabet(): List<Alphabet>
+        getAlphabetById(id: string): Alphabet
+        getAlphabetByWord(word: string): List<Alphabet>    
+    }
+
+    class Dictionary {
+        gloss: string
+        videoId: string
+        category: string
+        start: string
+        end: string
+        getDictionary(): List<Dictionary>
+        getDictionaryById(id: string): Dictionary
+        getRandomWord(): string
+        getQuizzLsf(): quizzLSF
+        getQuizzFr(): quizzFR
+    }
+
+
+    Lsf <- Alphabet
+}
+
+@enduml

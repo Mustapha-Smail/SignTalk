@@ -4,7 +4,7 @@
 :revnumber: v.0.1
 :revdate: 26.09.2022
 :revremark: First draft
-:imagesdir: ../frontend/public/images
+:imagesdir: ../ressources/images
 
 == Partie 1 : Présentation 
 
@@ -42,6 +42,7 @@ Pour pallier ces problématiques, SignTalk est une application web qui permet de
 ** Dictionnaire de langues des signes française (Elix) 
 ** Apprentissage vidéo de la LSF (HiFive) 
 * Personas et fonctionnalités de leur point de vue (haut niveau)  
+** Apprentissage de l'alphabet de la LSF
 ** Affichage aléatoire d’une image/vidéo de LSF, avec sa traduction en langue française en dessous. 
 ** Quizz de LSF vers langue française (1 image et 4 choix de mots en langue française)  et inversement
 ** Chercher la traduction en LSF d’un mot en langue française
@@ -76,16 +77,91 @@ Pour pallier ces problématiques, SignTalk est une application web qui permet de
 
 * Feature - Random image LSF
 
+Mise en service le 27/09/2022
+
 image:feature-random.png[Wireframe_Random,300,300]
+
+Cette fonctionnalité offre a l'utilisateur la possiblité d'apprendre le language LSF en affichant aléatoirement un mot et sa traduction en LSF
+
+
+
+=== Seconde itération
 
 * Feature - Alphabet
 
+Mise en service le 11/10/2022
+
 image:feature-alphabet.png[Wireframe_alphabet,300,300]
 
-* Feature - 4 images / 1 words
+Cette fonctionnalité permet à l'utilisateur d'apprendre l'alphabet LSF en lui affichant une lettre et l'image associé en LSF
+
+
+* Feature - 4 images / 1 
+
+Mise en service le 11/10/2022
 
 image:feature-4images1word.png[Wireframe_4images1word,300,300]
 
-* Feature - 4 words / 1 image 
-// image:.png[Wireframe_4images1word,100,100]
+Cette fonctionnalité permet à l'utilisateur de vérifier les connaissances via un quizz avec 1 mot et 4 réponses sous forme d'images.
 
+* Feature - 4 words / 1 image
+
+Mise en service le 11/10/2022
+
+image:feature-4words1image.png[Wireframe_4words1image,300,300] 
+
+Cette fonctionnalité permet à l'utilisateur de vérifier les connaissances via un quizz avec 1 image et 4 réponses sous forme de mots.
+
+
+
+=== Troisième itération
+
+* Feature - Traduction
+
+Mise en service le 26/10/2022
+
+image:feature-traduction.png[Wireframe_traduction,300,300]
+
+Cette fonctionnalité permet à l'utilisateur d'effectuer la recherche d'un mot et de trouver sa traduction en LSF.
+
+* Feature - Décomposition d'un mot 
+
+Mise en service le 26/10/2022
+
+image:feature-decomposition.png[Wireframe_decomposition,300,300]
+
+
+Cette fonctionnalité permet à l'utilisateur de décomposer un mot en lettre et d'afficher la traduction en LSF de chacune de ces lettres.
+
+
+
+
+
+=== Diagrames de séquence
+
+* Diagramme de la 1 ère itération
+
+image:Diagram.png[Wireframe_decomposition,300,300]
+
+* Diagramme de la feature 4 images un mot
+
+image:Diagram-QuizA.png[Wireframe_decomposition,300,300]
+
+* Diagramme de la feature 1 images 4 mot
+
+image:Diagram-Quiz2.png[Wireframe_decomposition,300,300]
+
+* Diagramme de la feature de recherche
+
+image:Diagram-recherche.png[Wireframe_decomposition,300,300]
+
+* Diagramme de la feature de decomposition
+
+image:Diagram-decomposition.png[Wireframe_decomposition,300,300]
+
+
+
+=== Diagramme de classe
+
+
+image:Diagramme-de-classes.png[Wireframe_decomposition,300,300]
