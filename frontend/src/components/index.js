@@ -33,3 +33,15 @@ export { default as AlphabetMenuMobile } from './Alphabet/AlphabetMenuMobile/Alp
 export { default as QuizzButton } from './Quizz/QuizzButton/QuizzButton.jsx'
 export { default as QuizzLSFContainer } from './Quizz/QuizzLSF/QuizzLSFContainer.jsx'
 export { default as QuizzFRContainer} from './Quizz/QuizzFR/QuizzFRContainer.jsx'
+
+/**
+ * Search Elements
+ */
+ export { default as SearchBar} from './Search/SearchBar.jsx'
+ export { default as SearchContainer} from './Search/SearchContainer.jsx'
+ 
+ /**
+  * Decomposition Elements
+  */
+ export { default as DecompoCarousel} from './Decomposition/DecompoCarousel.jsx'
+ 

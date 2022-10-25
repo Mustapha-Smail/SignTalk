@@ -5,11 +5,8 @@ import { ImageContainer, TextContainer, ButtonContainer } from '../../../compone
 
 const LsfHeader = () => {
     const [word, setWord] = useState({
-        name: 'Learn',
-        lsf: {
-            type: 'image', 
-            url: '/images/header-img.png'
-        }
+        gloss: 'Learn',
+        videoId: '99999999999999'
     })
 
     const getData = async () => {
@@ -18,7 +15,7 @@ const LsfHeader = () => {
             const id = response.data.id
             const {data}  = await axios.get(`api/dictionary/${id}`)
             setWord(data)
-
+            console.log(data);
         } catch (err) {
             console.error(err);
         }
@@ -30,8 +27,8 @@ const LsfHeader = () => {
 
     return (
         <div className="st__lsfheader section__padding">
-            <ImageContainer imgSrc={word.lsf.url} imgAlt={word.name}/>
-            <TextContainer content={word.name}/>
+            <ImageContainer videoId={word.videoId}/>
+            <TextContainer content={word.gloss}/>
             <ButtonContainer onClickMethod={getData}/>
         </div>
     )

@@ -2,6 +2,7 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 
 import { dictionary } from './data/dictionary.js'
+import { alphabet } from './data/alphabet.js'
 
 import Dictionary from './models/Dictionary.js'
 import Alphabet from './models/Alphabet.js'
@@ -18,7 +19,7 @@ const importData = async () => {
         await Alphabet.deleteMany()
 
         const createdDictionary = await Dictionary.insertMany(dictionary)
-        const createdAlphabet = await Alphabet.insertMany(dictionary)
+        const createdAlphabet = await Alphabet.insertMany(alphabet)
 
         console.log('Data Imported!');
         process.exit()

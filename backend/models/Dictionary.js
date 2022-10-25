@@ -1,12 +1,30 @@
 import mongoose from 'mongoose'
-import { lsfSchema } from './Lsf.js'
 
 const dictionarySchema = mongoose.Schema({
-    name: {
+    videoId: {
+        type: String,
+        required: true,
+    },
+    gloss: {
         type: String, 
         required: true,
     },
-    lsf: lsfSchema,
+    type: {
+        type: String, 
+        required: true,
+    },
+    category: {
+        type: String, 
+        // required: true,
+    },
+    start: {
+        type: String, 
+        // required: true,
+    },
+    end: {
+        type: String, 
+        // required: true,
+    },
     
 }, {
     timestamps: true, 

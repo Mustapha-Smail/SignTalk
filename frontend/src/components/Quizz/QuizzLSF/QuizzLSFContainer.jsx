@@ -8,10 +8,7 @@ import './QuizzLSFContainer.css';
 const QuizzLSFContainer = () => {
 
   const [quizz, setQuizz] = useState({
-    multimedia: {
-        type: 'image', 
-        url: '/images/header-img.png'
-    },
+    multimedia: 'videoId',
     words: ['word_1', 'word_2', 'word_3', 'word_4'], 
     correctWord: 'word_3'
     
@@ -58,7 +55,7 @@ const QuizzLSFContainer = () => {
     <>
       <div className="st__quizz">
         <div className="st__quizz-image">
-          <ImageContainer imgSrc={quizz.multimedia.url} imgAlt={quizz.multimedia.type}/>
+          <ImageContainer videoId={quizz.multimedia}/>
         </div>
         <div className="st__quizz-content">
           {quizz.words.map((word, index) => (
