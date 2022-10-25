@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@5.0.2
+  codecov: codecov/codecov@3.2.3
 jobs:
   test: 
     executor: node/default # use the default executor defined within the orb
@@ -19,3 +20,8 @@ workflows:
   build_test: # this can be any name you choose
     jobs:
       - test
+  upload-to-codecov:
+    jobs:
+      - node/test:
+          post-steps:
+            - codecov/upload
