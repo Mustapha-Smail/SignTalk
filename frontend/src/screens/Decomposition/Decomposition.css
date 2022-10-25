@@ -1,0 +1,11 @@
+.st__decompo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.st__decompo div div {
+    z-index: 10;
+    cursor: pointer;
+}

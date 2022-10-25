@@ -1,5 +1,17 @@
 import mongoose from 'mongoose'
-import { lsfSchema } from './Lsf.js'
+
+const lsfSchema = mongoose.Schema({
+    type: {
+        type: String,
+        required: true,
+    },
+    url: {
+        type: String,
+        required: true,
+    },
+}, {
+    timestamps: true, 
+})
 
 const alphabetSchema = mongoose.Schema({
     name: {

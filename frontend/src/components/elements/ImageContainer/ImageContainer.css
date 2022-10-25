@@ -1,11 +1,12 @@
 .st__lsfheader-image {
   width: 35rem;
-  height: 25rem;
+  height: 20rem;
   object-fit: scale-down;
   object-position: 50% 50%;
-  background: #fff;
+  background: transparent;
 }
-.st__lsfheader-image img {
+.st__lsfheader-image img,
+.st__lsfheader-image video {
   width: 100%;
   height: 100%;
 }

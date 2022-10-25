@@ -1,0 +1,9 @@
+.slide {
+    padding: 1rem 0;
+}
+.slide div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

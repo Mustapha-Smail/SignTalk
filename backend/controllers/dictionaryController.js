@@ -72,24 +72,21 @@ const getQuizzLsf = asyncHandler (async (req, res) => {
     const extractedWords = []
 
     randomPairs.forEach(pair => {
-        extractedWords.push(pair.name)
+        extractedWords.push(pair.gloss)
     });
 
     // create the quizz to return 
     /**
      * quizz = {
-     * multimedia : {
-     *  type: "image",
-     *  url: "url"
-     * }, 
+     * multimedia : video_id, 
      * words: [word_1, word_2, word_3, word_4], 
      * correctWord: word_3
      * }
      */
     const quizz = {
-        multimedia : randomPair.lsf, 
+        multimedia : randomPair.videoId, 
         words : extractedWords, 
-        correctWord : randomPair.name
+        correctWord : randomPair.gloss
     }
 
     res.json(quizz)
@@ -121,38 +118,22 @@ const getQuizzFr = asyncHandler (async (req, res) => {
     const extractedMultimdeia = []
 
     randomPairs.forEach(pair => {
-        extractedMultimdeia.push(pair.lsf)
+        extractedMultimdeia.push(pair.videoId)
     });
 
     // create the quizz to return 
     /**
      * quizz = {
      * word : word, 
-     * multimedia: [
-     *  {
-     *      type: "image", 
-     *      url: "url_1"   
-     *  }, 
-     *  {
-     *      type: "image", 
-     *      url: "url_2"   
-     *  }, 
-     *  {
-     *      type: "image", 
-     *      url: "url_3"   
-     *  }, 
-     *  {
-     *      type: "image", 
-     *      url: "url_4"   
-     *  }, 
+     * multimedia: [video_id_0, video_id_1, video_id_2, video_id_3] 
      * ], 
-     * correctMultimedia: url_3
+     * correctMultimedia: video_id_3
      * }
      */
     const quizz = {
-        word : randomPair.name, 
+        word : randomPair.gloss, 
         multimedias : extractedMultimdeia, 
-        correctMultimedia : randomPair.lsf
+        correctMultimedia : randomPair.videoId
     }
 
     res.json(quizz)

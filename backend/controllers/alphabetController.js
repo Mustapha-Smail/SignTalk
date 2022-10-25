@@ -28,4 +28,36 @@ const getAlphabetById = asyncHandler(async (req, res) => {
 })
 
 
-export { getAlphabet, getAlphabetById }
+// @desc    Get letters by word 
+// @route   GET /api/alphabet/:word
+// @access  Public 
+const getAlphabetByWord = asyncHandler(async (req, res) => {
+    const word = req.params.word.toUpperCase().split('')
+
+    let letters = await Alphabet.find({
+        'name': {
+            $in: word
+        }
+    });
+
+    let words = []
+
+    word.forEach(wLetter => {
+        const letter = letters.find( letter => letter.name === wLetter );
+        
+        words = [...words, letter]
+    });
+
+
+    if (words) {
+        res.status(200).json(words)
+    }   
+    else {
+        res.status(404)
+        throw new Error('Letters not found')
+    }
+
+
+})
+
+export { getAlphabet, getAlphabetById, getAlphabetByWord }

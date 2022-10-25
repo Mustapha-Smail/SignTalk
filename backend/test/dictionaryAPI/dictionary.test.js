@@ -33,11 +33,9 @@ describe('Dictionary API', () => {
                 expect(body).toEqual(
                     expect.arrayContaining([
                         expect.objectContaining({
-                            name: expect.any(String),
-                            lsf: expect.objectContaining({
-                                type: expect.any(String),
-                                url: expect.any(String),
-                            })
+                            videoId: expect.any(String),
+                            gloss: expect.any(String),
+                            type: expect.any(String)
                         })
                     ])
                 )
@@ -60,7 +58,7 @@ describe('Dictionary API', () => {
 
     it('GET /api/dictionary/id --> return a Dictionary by Id',  () => {
         return request(app)
-            .get('/api/dictionary/63370b1cdaac278e4208db60')
+            .get('/api/dictionary/63579d0ff54ce6bc84b12aa7')
             .expect('Content-Type', /json/)
             .expect(200)
             .then((res) => {
@@ -70,11 +68,9 @@ describe('Dictionary API', () => {
 
                 expect(body).toEqual(
                     expect.objectContaining({
-                        name: expect.any(String),
-                        lsf: expect.objectContaining({
-                            type: expect.any(String),
-                            url: expect.any(String),
-                        })
+                        videoId: expect.any(String),
+                        gloss: expect.any(String),
+                        type: expect.any(String)
                     })
                 )
             })
@@ -104,10 +100,7 @@ describe('Dictionary API', () => {
 
                 expect(body).toEqual(
                     expect.objectContaining({
-                        multimedia: expect.objectContaining({
-                            type: expect.any(String),
-                            url: expect.any(String),
-                        }),
+                        multimedia: expect.any(String),
                         words: expect.arrayContaining([
                             expect.any(String)
                         ])
@@ -129,16 +122,8 @@ describe('Dictionary API', () => {
                 expect(body).toEqual(
                     expect.objectContaining({
                         word: expect.any(String),
-                        multimedias: expect.arrayContaining([
-                            expect.objectContaining({
-                                type: expect.any(String),
-                                url: expect.any(String),
-                            })
-                        ]),
-                        correctMultimedia: expect.objectContaining({
-                            type: expect.any(String),
-                            url: expect.any(String),
-                        })
+                        multimedias: expect.arrayContaining([expect.any(String)]),
+                        correctMultimedia: expect.any(String)
                     })
                 )
             })
