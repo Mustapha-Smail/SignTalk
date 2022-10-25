@@ -1,0 +1,91 @@
+= SignTalk : Application web d’apprentissage de langue des signes française
+:author: *Bakari Traoré* 
+:email: <b.traore771@gmail.com>
+:revnumber: v.0.1
+:revdate: 26.09.2022
+:revremark: First draft
+:imagesdir: ../frontend/public/images
+
+== Partie 1 : Présentation 
+
+* Titre du projet, abréviation, logo
+
+** Apprentissage de la langue des signes française
+
+** SignTalk 
+
+** image:SIGN.png[Logo,100,100]
+
+* Membres de l'équipe 
+
+** Bakari, Lamia, Mustapha, Thomas
+
+* Notre projet 
+ 
+Le 10 février 2010, le secrétariat d'État chargé de la famille et de la solidarité publiait le plan en faveur des personnes sourdes et malentendantes. Il y est noté différents points chiffrés :
+
+Naissance:: un enfant sur 1000 naît avec une déficience auditive ou est dépisté avant deux ans soit 700 enfants par an
+Population:: 6,6 % de la population française (4,09 millions de personnes) souffrent d'un déficit auditif, dont 88 % sont devenus sourds au cours de leur vie
+Déficience:: 483 000 personnes avec une déficience auditive profonde ou sévère
+Appareil auditif:: 600 000 malentendants portent un appareil auditif
+LSF:: 80 000 utilisent la LSF
+
+Cependant, il existe une grande difficulté d’accès à la LSF pour ces personnes, et les outils numériques disponibles actuellement ne sont pas suffisamment adaptés pour l’apprentissage de cette dernière. 
+
+Pour pallier ces problématiques, SignTalk est une application web qui permet de faciliter l’apprentissage de la LSF à travers des quizz et des traductions en temps réel de la langue française vers la LSF et inversement.
+
+* Problématique et gain attendu : Aide à l’apprentissage de la langue des signes 
+* Motivation de l'équipe par rapport au sujet : 
+Éliminer les obstacles liés à la communication qui entravent le quotidien des millions de personnes sourdes et malentendantes en France à travers le monde.
+ 
+* Concurrence / état de l'art de l'existant et placement par rapport à cela) : 
+** Dictionnaire de langues des signes française (Elix) 
+** Apprentissage vidéo de la LSF (HiFive) 
+* Personas et fonctionnalités de leur point de vue (haut niveau)  
+** Affichage aléatoire d’une image/vidéo de LSF, avec sa traduction en langue française en dessous. 
+** Quizz de LSF vers langue française (1 image et 4 choix de mots en langue française)  et inversement
+** Chercher la traduction en LSF d’un mot en langue française
+** Décomposition d’une phrase/mot en LSF avec une suite d’images/vidéos pour le reproduire 
+** Histoire (vidéo en LSF)  + Quizz/Questions à la fin 
+* Prévisions marketing (comment prévoyez vous de pousser votre projet auprès des utilisateurs, réseaux sociaux, enquêtes, flyers, site Web, etc) :
+** Compte twitter, enquêtes de rue, site Web 
+
+== Partie 2 : Aspects techniques
+
+* Type d'application (web, mobile)
+** Site web puis éventuellement mobile
+* Schéma architectural de l'application (front / API / back / persistance)
+* Plateforme technologique (langages utilisés, frameworks de test, de lien métier/API, métier/persistance)
+** Langages utilisés : Javascript, React
+** Frameworks de test : Jest
+** Frameworks de lien métier/API : Axios 
+** Persistance : MongoDB
+* Plateforme opérationnelle (gestion de versions, build, qualité de code, CI, déploiement) :
+** Git/Github, Gradle, SonarQube, Travis CI, Travis CI  
+* Interconnection avec systèmes / API distantes (en prévision M1 semestre 2 et M2) : 
+** Poster des succès ou des badges sur les réseaux sociaux 
+** Planification des séances d’apprentissage (agenda)
+** bot translate language des signes (twitter) (générer une vidéo de language des signes à partir d’une phrase)
+* Acquisition de données, usage intelligent des données (en prévision M2) :
+** Reconstitution en LSF d’une phrase complète en temps réel par découpe de phonème.
+** Traduire le texte d’un texte traduit d’une vidéo en LSF
+
+== Partie 3 : Modélisation
+
+=== Première itération
+
+* Feature - Random image LSF
+
+image:feature-random.png[Wireframe_Random,300,300]
+
+* Feature - Alphabet
+
+image:feature-alphabet.png[Wireframe_alphabet,300,300]
+
+* Feature - 4 images / 1 words
+
+image:feature-4images1word.png[Wireframe_4images1word,300,300]
+
+* Feature - 4 words / 1 image 
+// image:.png[Wireframe_4images1word,100,100]
+

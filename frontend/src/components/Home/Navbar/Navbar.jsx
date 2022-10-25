@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import './navbar.css';
+import Links from './Links';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -14,13 +15,7 @@ const Navbar = () => {
             <Link to='/'> SignTalk </Link> 
           </h1>
         </div>
-        <div className="st__navbar-links_container">
-          <p><Link to='/'>Accueil</Link></p>
-          <p><Link to='/learn'>Apprendre</Link></p>
-          <p><Link to='/alphabet'>Alphabet</Link></p>
-          <p><Link to='/quizz'>Quizz</Link></p>
-          <p><Link to='/'>Nous contacter</Link></p>
-        </div>
+        <Links className={"st__navbar-links_container"}/>
       </div>
       <div className="st__navbar-menu">
         {toggleMenu
@@ -28,13 +23,7 @@ const Navbar = () => {
           : <RiMenu3Line color="#fff" size={27} onClick={() => setToggleMenu(true)} />}
         {toggleMenu && (
         <div className="st__navbar-menu_container scale-up-center">
-          <div className="st__navbar-menu_container-links">
-            <p><Link to='/'>Accueil</Link></p>
-            <p><Link to='/learn'>Apprendre</Link></p>
-            <p><Link to='/alphabet'>Alphabet</Link></p>
-            <p><Link to='/quizz'>Quizz</Link></p>
-            <p><Link to='/'>Nous contacter</Link></p>
-          </div>
+          <Links className={"st__navbar-menu_container-links"}/>
         </div>
         )}
       </div>

@@ -1,0 +1,35 @@
+
+.st__grid-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--color-footer);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.st__grid-menu-width {
+  width: 100%;
+}
+
+.st__grid-closebtn {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.st__grid-menu-content h3 {
+  text-align: center;
+}
+.st__grid-menu-content .alphabet-list {
+  align-items: center;
+}
+

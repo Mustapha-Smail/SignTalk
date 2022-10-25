@@ -1,4 +1,6 @@
 export { default as Home } from './Home/Home'
 export { default as Learn } from './Learn/Learn'
 export { default as Alphabet } from './Alphabet/Alphabet'
-export { default as Quizz } from './Quizz/Quizz'
+export { default as QuizzChoice } from './Quizz/QuizzChoice/QuizzChoice'
+export { default as QuizzLSF } from './Quizz/QuizzLSF/QuizzLSF'
+export { default as QuizzFR } from './Quizz/QuizzFR/QuizzFR'
