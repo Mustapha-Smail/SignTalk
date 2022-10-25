@@ -40,3 +40,8 @@ export { default as QuizzFRContainer} from './Quizz/QuizzFR/QuizzFRContainer.jsx
  export { default as SearchBar} from './Search/SearchBar.jsx'
  export { default as SearchContainer} from './Search/SearchContainer.jsx'
  
+ /**
+  * Decomposition Elements
+  */
+ export { default as DecompoCarousel} from './Decomposition/DecompoCarousel.jsx'
+ 
