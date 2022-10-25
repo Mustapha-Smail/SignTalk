@@ -158,3 +158,10 @@ image:Diagram-recherche.png[Wireframe_decomposition,300,300]
 * Diagramme de la feature de decomposition
 
 image:Diagram-decomposition.png[Wireframe_decomposition,300,300]
+
+
+
+=== Diagramme de classe
+
+
+image:Diagramme-de-classes.png[Wireframe_decomposition,300,300]
