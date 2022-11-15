@@ -29,6 +29,19 @@ package SignTalk_DB {
     }
 
 
+    class User {
+            id: int
+            nom: string 
+            prenom: string 
+            email: string
+            password: string
+            isAdmin: boolean 
+            authUser(email: String,password: String), 
+            registerUser(nom: String,prenom: String, email: String, password: String), 
+            getUserProfile(id: String), 
+            updateUserProfile(id: String), 
+    }
+
     Lsf <- Alphabet
 }
 

@@ -1,8 +1,8 @@
 = SignTalk : Application web d’apprentissage de langue des signes française
 :author: *Bakari Traoré* 
 :email: <b.traore771@gmail.com>
-:revnumber: v.0.1
-:revdate: 26.09.2022
+:revnumber: v.0.4
+:revdate: 15.11.2022
 :revremark: First draft
 :imagesdir: ../ressources/images
 
@@ -133,7 +133,30 @@ image:feature-decomposition.png[Wireframe_decomposition,300,300]
 
 Cette fonctionnalité permet à l'utilisateur de décomposer un mot en lettre et d'afficher la traduction en LSF de chacune de ces lettres.
 
+=== Quatrième itération
 
+* Feature - inscription
+
+Mise en service le 15/11/2022
+
+image:feature-inscription.png[Wireframe_inscription,300,300]
+
+Cette fonctionnalité permet à l'utilisateur de s'inscrire sur notre application.
+
+* Feature - connexion
+
+Mise en service le 15/11/2022
+
+image:feature-connexion.png[Wireframe_connexion,300,300]
+
+Cette fonctionnalité permet à l'utilisateur de se connecter sur notre application.
+
+* Feature - profil
+
+
+image:feature-espace_user.png[Wireframe_espace_user,300,300]
+
+Cette fonctionnalité permet à l'utilisateur de modifier son profil.
 
 
 
@@ -141,27 +164,34 @@ Cette fonctionnalité permet à l'utilisateur de décomposer un mot en lettre et
 
 * Diagramme de la 1 ère itération
 
-image:Diagram.png[Wireframe_decomposition,300,300]
+image:Diagram.png[Diagram_decomposition,300,300]
 
 * Diagramme de la feature 4 images un mot
 
-image:Diagram-QuizA.png[Wireframe_decomposition,300,300]
+image:Diagram-QuizA.png[Diagram_decomposition,300,300]
 
 * Diagramme de la feature 1 images 4 mot
 
-image:Diagram-Quiz2.png[Wireframe_decomposition,300,300]
+image:Diagram-Quiz2.png[Diagram_decomposition,300,300]
 
 * Diagramme de la feature de recherche
 
-image:Diagram-recherche.png[Wireframe_decomposition,300,300]
+image:Diagram-recherche.png[Diagram_decomposition,300,300]
 
 * Diagramme de la feature de decomposition
 
-image:Diagram-decomposition.png[Wireframe_decomposition,300,300]
+image:Diagram-decomposition.png[Diagram_decomposition,300,300]
 
+* Diagramme de la feature d'inscription
 
+image:Diagram-Inscription.png[Diagram_Inscription,300,300]
+
+* Diagramme de la feature de connexion
+
+image:Diagram-connexion.png[Diagram_connexion,300,300]
 
 === Diagramme de classe
 
 
-image:Diagramme-de-classes.png[Wireframe_decomposition,300,300]
+image:Diagramme-de-classes.png[Diagram_decomposition,300,300]
+
