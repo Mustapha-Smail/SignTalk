@@ -1,37 +1,48 @@
 @startuml
 
-package models {
-class Alphabet
-class Dictionary
-class Lsf
+package SignTalk_DB {
+   
+    class Lsf {
+        type: string
+        url: string
+    }
 
-class Alphabet {
-    name : String
-    lsf : Lsf
+    class Alphabet {
+        name: string
+        lsf: Lsf
+        getAlphabet(): List<Alphabet>
+        getAlphabetById(id: string): Alphabet
+        getAlphabetByWord(word: string): List<Alphabet>    
+    }
 
-    getAlphabet() : Alphabet
-    getAlphabetById() : Letter
+    class Dictionary {
+        gloss: string
+        videoId: string
+        category: string
+        start: string
+        end: string
+        getDictionary(): List<Dictionary>
+        getDictionaryById(id: string): Dictionary
+        getRandomWord(): string
+        getQuizzLsf(): quizzLSF
+        getQuizzFr(): quizzFR
+    }
+
+
+    class User {
+            id: int
+            nom: string 
+            prenom: string 
+            email: string
+            password: string
+            isAdmin: boolean 
+            authUser(email: String,password: String), 
+            registerUser(nom: String,prenom: String, email: String, password: String), 
+            getUserProfile(id: String), 
+            updateUserProfile(id: String), 
+    }
+
+    Lsf <- Alphabet
 }
-
-class Dictionary {
-    name : String
-    lsf : Lsf
-
-    getDictionary() : Dictionary
-    getDictionaryById() : Dictionary
-    getRandomWord() : Word
-    getQuizzLsf() : Quizz
-    getQuizzFr() : Quizz
-}
-
-class Lsf{
-    type : String
-    url : String
-}
-}
-
-Lsf <-- Alphabet
-Lsf <-- Dictionary
-
 
 @enduml

@@ -1,8 +1,8 @@
 = SignTalk : Application web d’apprentissage de langue des signes française
 :author: *Bakari Traoré* 
 :email: <b.traore771@gmail.com>
-:revnumber: v.0.1
-:revdate: 26.09.2022
+:revnumber: v.0.4
+:revdate: 15.11.2022
 :revremark: First draft
 :imagesdir: ../ressources/images
 
@@ -77,20 +77,121 @@ Pour pallier ces problématiques, SignTalk est une application web qui permet de
 
 * Feature - Random image LSF
 
+Mise en service le 27/09/2022
+
 image:feature-random.png[Wireframe_Random,300,300]
+
+Cette fonctionnalité offre a l'utilisateur la possiblité d'apprendre le language LSF en affichant aléatoirement un mot et sa traduction en LSF
+
+
 
 === Seconde itération
 
 * Feature - Alphabet
 
+Mise en service le 11/10/2022
+
 image:feature-alphabet.png[Wireframe_alphabet,300,300]
 
+Cette fonctionnalité permet à l'utilisateur d'apprendre l'alphabet LSF en lui affichant une lettre et l'image associé en LSF
 
-* Feature - 4 images / 1 word
+
+* Feature - 4 images / 1 
+
+Mise en service le 11/10/2022
 
 image:feature-4images1word.png[Wireframe_4images1word,300,300]
 
-* Feature - 4 words / 1 image 
+Cette fonctionnalité permet à l'utilisateur de vérifier les connaissances via un quizz avec 1 mot et 4 réponses sous forme d'images.
 
-image:feature-4words1image.png[Wireframe_4words1image,300,300]   
+* Feature - 4 words / 1 image
+
+Mise en service le 11/10/2022
+
+image:feature-4words1image.png[Wireframe_4words1image,300,300] 
+
+Cette fonctionnalité permet à l'utilisateur de vérifier les connaissances via un quizz avec 1 image et 4 réponses sous forme de mots.
+
+
+
+=== Troisième itération
+
+* Feature - Traduction
+
+Mise en service le 26/10/2022
+
+image:feature-traduction.png[Wireframe_traduction,300,300]
+
+Cette fonctionnalité permet à l'utilisateur d'effectuer la recherche d'un mot et de trouver sa traduction en LSF.
+
+* Feature - Décomposition d'un mot 
+
+Mise en service le 26/10/2022
+
+image:feature-decomposition.png[Wireframe_decomposition,300,300]
+
+
+Cette fonctionnalité permet à l'utilisateur de décomposer un mot en lettre et d'afficher la traduction en LSF de chacune de ces lettres.
+
+=== Quatrième itération
+
+* Feature - inscription
+
+Mise en service le 15/11/2022
+
+image:feature-inscription.png[Wireframe_inscription,300,300]
+
+Cette fonctionnalité permet à l'utilisateur de s'inscrire sur notre application.
+
+* Feature - connexion
+
+Mise en service le 15/11/2022
+
+image:feature-connexion.png[Wireframe_connexion,300,300]
+
+Cette fonctionnalité permet à l'utilisateur de se connecter sur notre application.
+
+* Feature - profil
+
+
+image:feature-espace_user.png[Wireframe_espace_user,300,300]
+
+Cette fonctionnalité permet à l'utilisateur de modifier son profil.
+
+
+
+=== Diagrames de séquence
+
+* Diagramme de la 1 ère itération
+
+image:Diagram.png[Diagram_decomposition,300,300]
+
+* Diagramme de la feature 4 images un mot
+
+image:Diagram-QuizA.png[Diagram_decomposition,300,300]
+
+* Diagramme de la feature 1 images 4 mot
+
+image:Diagram-Quiz2.png[Diagram_decomposition,300,300]
+
+* Diagramme de la feature de recherche
+
+image:Diagram-recherche.png[Diagram_decomposition,300,300]
+
+* Diagramme de la feature de decomposition
+
+image:Diagram-decomposition.png[Diagram_decomposition,300,300]
+
+* Diagramme de la feature d'inscription
+
+image:Diagram-Inscription.png[Diagram_Inscription,300,300]
+
+* Diagramme de la feature de connexion
+
+image:Diagram-connexion.png[Diagram_connexion,300,300]
+
+=== Diagramme de classe
+
+
+image:Diagramme-de-classes.png[Diagram_decomposition,300,300]
 
