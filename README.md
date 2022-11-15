@@ -46,6 +46,10 @@ cd frontend/ && npm install --force && cd .. && npm install
         ```shell
         MONGO_URI=YOUR_MONGODB_URI
         ```
+    - add your JSON Web token secret 
+        ```shell
+        JWT_SECRET=YOUR_JWT_SECRET
+        ```
 - Create another `.env` file in the `frontend` folder and set the URL of your backend : <br>
 *DO NOT change the variable name* 
 ```shell

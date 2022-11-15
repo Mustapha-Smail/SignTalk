@@ -7,6 +7,7 @@ import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 // import routes 
 import dictionaryRoute from './routes/dictionaryRoute.js'
 import alphabetRoute from './routes/alphabetRoute.js'
+import userRoute from './routes/userRoute.js'
 
 dotenv.config()
 
@@ -17,6 +18,7 @@ app.use(cors())
 
 app.use('/api/dictionary', dictionaryRoute)
 app.use('/api/alphabet', alphabetRoute)
+app.use('/api/users', userRoute)
 
 app.use(notFound)
 app.use(errorHandler)
