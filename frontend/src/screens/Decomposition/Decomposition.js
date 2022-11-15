@@ -8,7 +8,7 @@ const Decomposition = () => {
     
     const getData = async ({videoId, gloss}) => {
         try {
-            const { data } = await axios.get(`/api/alphabet/${gloss}`)
+            const { data } = await axios.get(`/api/alphabet/word/${gloss}`)
             setLetters(data)    
         } catch (error) {
             console.error(error);

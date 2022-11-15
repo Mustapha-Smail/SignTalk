@@ -44,4 +44,9 @@ export { default as QuizzFRContainer} from './Quizz/QuizzFR/QuizzFRContainer.jsx
   * Decomposition Elements
   */
  export { default as DecompoCarousel} from './Decomposition/DecompoCarousel.jsx'
- 
+
+/**
+ * Auth Elements
+ */
+ export { default as Message } from './Message/Message'
+ export { default as Loader } from './Loader/Loader'
