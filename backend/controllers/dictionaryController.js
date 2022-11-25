@@ -125,7 +125,7 @@ const getQuizzFr = asyncHandler (async (req, res) => {
     /**
      * quizz = {
      * word : word, 
-     * multimedia: [video_id_0, video_id_1, video_id_2, video_id_3] 
+     * multimedias: [video_id_0, video_id_1, video_id_2, video_id_3] 
      * ], 
      * correctMultimedia: video_id_3
      * }

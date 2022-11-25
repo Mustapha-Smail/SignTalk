@@ -50,3 +50,4 @@ export { default as QuizzFRContainer} from './Quizz/QuizzFR/QuizzFRContainer.jsx
  */
  export { default as Message } from './Message/Message'
  export { default as Loader } from './Loader/Loader'
+ export { default as FormBoot } from './FormBoot/FormBoot'
