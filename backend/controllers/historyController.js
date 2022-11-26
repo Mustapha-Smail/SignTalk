@@ -87,9 +87,28 @@ const getHistory = asyncHandler(async (req, res) => {
 
 })
 
+// @desc    Delete history of a user   
+// @route   DELETE /api/history
+// @access  Private 
+const deleteHistory = asyncHandler(async (req, res) => {
+
+    const user = await User.findById(req.user._id)
+
+    if (user) {
+        await History.deleteMany({ userId: user._id })
+
+        res.status(200).json({ message: 'Historique supprimé avec succès!' })
+    } else {
+        res.status(404)
+        throw new Error('User not found')
+    }
+
+})
+
 
 
 export {
     archiveGame,
-    getHistory
+    getHistory,
+    deleteHistory
 }
