@@ -23,15 +23,15 @@ const getDictionaryById = asyncHandler(async (req, res) => {
     else {
         res.status(404)
         throw new Error('Pair not found')
-    } 
+    }
 })
 
 //@desc     Get a random Pair
 //@route    GET /api/dictionary/random
 //@access   Public
-const getRandomWord = asyncHandler (async (req, res) => {
+const getRandomWord = asyncHandler(async (req, res) => {
 
-    const randomWords = await Dictionary.aggregate([{ $sample: { size:1 }}])
+    const randomWords = await Dictionary.aggregate([{ $sample: { size: 1 } }])
 
     const randomWord = randomWords[0]
 
@@ -49,21 +49,21 @@ const getRandomWord = asyncHandler (async (req, res) => {
 //@desc     Get quizz LSF -> FR
 //@route    GET /api/dictionary/quizz/lsf
 //@access   Public 
-const getQuizzLsf = asyncHandler (async (req, res) => {
+const getQuizzLsf = asyncHandler(async (req, res) => {
     const randomPairs = await getRandomPair()
 
-    if(!randomPairs){
+    if (!randomPairs) {
         res.status(500)
         throw new Error('Internal Server Error')
     }
 
     // get random index from the list of random words 
     const randomIndex = Math.floor(Math.random() * randomPairs.length)
-    
+
     // get the pair from the random index 
     const randomPair = randomPairs[randomIndex]
-    
-    if(!randomPair) {
+
+    if (!randomPair) {
         res.status(500)
         throw new Error('Internal Server Error')
     }
@@ -84,9 +84,9 @@ const getQuizzLsf = asyncHandler (async (req, res) => {
      * }
      */
     const quizz = {
-        multimedia : randomPair.videoId, 
-        words : extractedWords, 
-        correctWord : randomPair.gloss
+        multimedia: randomPair.videoId,
+        words: extractedWords,
+        correctWord: randomPair.gloss
     }
 
     res.json(quizz)
@@ -95,21 +95,21 @@ const getQuizzLsf = asyncHandler (async (req, res) => {
 //@desc     Get quizz LSF -> FR
 //@route    GET /api/dictionary/quizz/fr
 //@access   Public 
-const getQuizzFr = asyncHandler (async (req, res) => {
+const getQuizzFr = asyncHandler(async (req, res) => {
     const randomPairs = await getRandomPair()
 
-    if(!randomPairs){
+    if (!randomPairs) {
         res.status(500)
         throw new Error('Internal Server Error')
     }
 
     // get random index from the list of random words 
     const randomIndex = Math.floor(Math.random() * randomPairs.length)
-    
+
     // get the pair from the random index 
     const randomPair = randomPairs[randomIndex]
-    
-    if(!randomPair) {
+
+    if (!randomPair) {
         res.status(500)
         throw new Error('Internal Server Error')
     }
@@ -131,9 +131,9 @@ const getQuizzFr = asyncHandler (async (req, res) => {
      * }
      */
     const quizz = {
-        word : randomPair.gloss, 
-        multimedias : extractedMultimdeia, 
-        correctMultimedia : randomPair.videoId
+        word: randomPair.gloss,
+        multimedias: extractedMultimdeia,
+        correctMultimedia: randomPair.videoId
     }
 
     res.json(quizz)

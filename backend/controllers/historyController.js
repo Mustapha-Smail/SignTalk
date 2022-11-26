@@ -6,37 +6,37 @@ import History from '../models/History.js'
 // @route   POST /api/history
 // @access  Private 
 const archiveGame = asyncHandler(async (req, res) => {
-    const { 
-        type, 
+    const {
+        type,
         details: {
-            word, 
-            multimedias, 
-            correctMultimedia, 
-            multimedia, 
-            words, 
+            word,
+            multimedias,
+            correctMultimedia,
+            multimedia,
+            words,
             correctWord,
-        }, 
-        isCorrect, 
+        },
+        isCorrect,
     } = req.body
 
 
     const user = await User.findById(req.user._id)
 
     if (user) {
-        
+
         const historyGame = History.create({
             game: {
-                type, 
+                type,
                 details: {
-                    word, 
-                    multimedias, 
-                    correctMultimedia, 
-                    multimedia, 
-                    words, 
+                    word,
+                    multimedias,
+                    correctMultimedia,
+                    multimedia,
+                    words,
                     correctWord,
-                }, 
-                isCorrect, 
-            }, 
+                },
+                isCorrect,
+            },
             userId: user._id,
         })
 
@@ -57,8 +57,29 @@ const getHistory = asyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id)
 
     if (user) {
-        const historyGame = await History.find({userId: user._id})
-        res.status(200).json(historyGame)
+        const historyGame = await History.find({ userId: user._id })
+
+        let count = {
+            quizzLSF: {
+                name: '4 mots 1 image',
+                correct: 0,
+                incorrect: 0,
+            },
+            quizzFR: {
+                name: '4 images 1 mot',
+                correct: 0,
+                incorrect: 0,
+            },
+        }
+
+        historyGame.map(game => {
+            game.game.type === 'quizzLSF' ?
+                game.game.isCorrect ? count.quizzLSF.correct++ : count.quizzLSF.incorrect++
+                : game.game.isCorrect ? count.quizzFR.correct++ : count.quizzFR.incorrect++
+        })
+
+
+        res.status(200).json({ historyGame, count })
     } else {
         res.status(404)
         throw new Error('User not found')
