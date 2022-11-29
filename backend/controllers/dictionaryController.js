@@ -94,7 +94,8 @@ const getQuizzLsf = asyncHandler (async (req, res) => {
     const quizz = {
         multimedia : randomPair.videoId, 
         words : extractedWords, 
-        correctWord : randomPair.gloss
+        correctWord : randomPair.gloss,
+        category : randomPair.category
     }
 
     res.json(quizz)

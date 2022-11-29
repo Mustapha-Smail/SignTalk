@@ -35,7 +35,8 @@ describe('Dictionary API', () => {
                         expect.objectContaining({
                             videoId: expect.any(String),
                             gloss: expect.any(String),
-                            type: expect.any(String)
+                            type: expect.any(String), 
+                            category : expect.any(String)
                         })
                     ])
                 )
@@ -58,7 +59,7 @@ describe('Dictionary API', () => {
 
     it('GET /api/dictionary/id --> return a Dictionary by Id',  () => {
         return request(app)
-            .get('/api/dictionary/63579d0ff54ce6bc84b12aa7')
+            .get('/api/dictionary/6385ec34a97a15c127306043')
             .expect('Content-Type', /json/)
             .expect(200)
             .then((res) => {
@@ -70,7 +71,8 @@ describe('Dictionary API', () => {
                     expect.objectContaining({
                         videoId: expect.any(String),
                         gloss: expect.any(String),
-                        type: expect.any(String)
+                        type: expect.any(String),
+                        category : expect.any(String)
                     })
                 )
             })
@@ -106,6 +108,7 @@ describe('Dictionary API', () => {
                         ])
                         ,
                         correctWord: expect.any(String),
+                        category : expect.any(String)
                     })
                 )
             })
@@ -123,7 +126,8 @@ describe('Dictionary API', () => {
                     expect.objectContaining({
                         word: expect.any(String),
                         multimedias: expect.arrayContaining([expect.any(String)]),
-                        correctMultimedia: expect.any(String)
+                        correctMultimedia: expect.any(String),
+                        category : expect.any(String)
                     })
                 )
             })
