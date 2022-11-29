@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
-import { Alphabet, Home, Learn, QuizzChoice, QuizzLSF, QuizzFR, Search, Decomposition, Login, Register, Profile } from './screens'
+import { Alphabet, Home, Learn, QuizzChoice, QuizzLSF, QuizzFR, Search, Decomposition, Login, Register, Profile, History } from './screens'
 
 const App = () => {
   return (
@@ -16,6 +16,7 @@ const App = () => {
         <Route path='/learn' element={<Learn />}></Route>  
         <Route path='/search' element={<Search />}></Route>  
         <Route path='/decomposition' element={<Decomposition />}></Route>  
+        <Route path='/history' element={<History />}></Route>  
         <Route path='/quizz' >
           <Route path='quizzlsf' element={<QuizzLSF />}></Route>
           <Route path='quizzfr' element={<QuizzFR />}></Route>

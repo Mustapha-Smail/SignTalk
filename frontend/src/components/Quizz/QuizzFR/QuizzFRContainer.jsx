@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { ImageContainer, TextContainer, ButtonContainer } from '../../../components'
-import swal from 'sweetalert'
+import { notif } from '../../../utils'
 
 import './QuizzFR.css';
 
@@ -30,30 +30,6 @@ useEffect(() => {
   getData()
 }, [])
 
-const notif = (e) => {
-  let status = 'incorrect';
-  const answer = e.target.value
-  if (answer === quizz.correctMultimedia) {
-      status = 'correct'
-  }
-  swal({
-      title: status === 'correct' ? "Bien joué !" : "Oh non :-(",
-      text: status === 'correct' ? "Tu as choisis la bonne réponse !" : "Tu as choisis la mauvaise réponse ! Reéssaies !",
-      icon: status === 'correct' ? "success" : "error",
-      button: {
-          text: "Suivant",
-          value: true,
-          visible: true,
-          className: status === 'correct' ? "green-bg" : "red-bg",
-          closeModal: true,
-      },
-      closeOnClickOutside: false,
-      closeOnEsc: false,
-  }).then(()=>{
-      getData()
-      setChecked(false) 
-  });
-}
 
 return (
   <>
@@ -63,11 +39,11 @@ return (
             <TextContainer content={quizz.word}/>
           </div>
       </div>
-      <div className="quizzfr__media" onChange={(e) => notif(e)}>
+      <div className="quizzfr__media" onChange={(e) => notif(e, quizz, getData, setChecked)}>
         {quizz.multimedias.map((video, index)=> (
           <div className={`quizzfr__media-img${index} media-center`}>
             <ImageContainer videoId={video} className={"quizzfr__img"}/>
-            <input name={video} checked={checked} type={'radio'} value={video} onChange={(e) => notif(e)}/>
+            <input name={video} checked={checked} type={'radio'} value={video} onChange={(e) => notif(e, quizz, getData, setChecked)}/>
           </div>
         ))}
       </div>

@@ -12,14 +12,14 @@ const authUser = asyncHandler(async (req, res) => {
 
     // we can define in models methods 
     // User model has a method to compare passwords 
-    if(user && ( await user.matchPassword(password) )) {
+    if (user && (await user.matchPassword(password))) {
         res.json({
-            _id: user._id, 
-            nom: user.nom, 
-            prenom: user.prenom, 
+            _id: user._id,
+            nom: user.nom,
+            prenom: user.prenom,
             email: user.email,
-            isAdmin: user.isAdmin, 
-            token: generateToken(user._id),  
+            isAdmin: user.isAdmin,
+            token: generateToken(user._id),
         })
     } else {
         res.status(401)
@@ -36,27 +36,26 @@ const registerUser = asyncHandler(async (req, res) => {
 
     const userExists = await User.findOne({ email })
 
-    if(userExists) {
+    if (userExists) {
         res.status(400)
         throw new Error('User already exists')
     }
 
     const user = await User.create({
-        nom, 
-        prenom, 
-        email, 
+        nom,
+        prenom,
+        email,
         password,
     })
 
-    if(user) {
+    if (user) {
         res.status(201).json({
-            _id: user._id, 
-            nom: user.nom, 
-            prenom: user.prenom, 
+            _id: user._id,
+            nom: user.nom,
+            prenom: user.prenom,
             email: user.email,
-            recipes: user.recipes,
-            isAdmin: user.isAdmin, 
-            token: generateToken(user._id),  
+            isAdmin: user.isAdmin,
+            token: generateToken(user._id),
         })
     } else {
         res.status(400)
@@ -73,11 +72,11 @@ const getUserProfile = asyncHandler(async (req, res) => {
 
     if (user) {
         res.json({
-            _id: user._id, 
-            nom: user.nom, 
-            prenom: user.prenom, 
+            _id: user._id,
+            nom: user.nom,
+            prenom: user.prenom,
             email: user.email,
-            isAdmin: user.isAdmin, 
+            isAdmin: user.isAdmin,
         })
     } else {
         res.status(404)
@@ -95,18 +94,18 @@ const updateUserProfile = asyncHandler(async (req, res) => {
         user.nom = req.body.nom || user.nom
         user.prenom = req.body.prenom || user.prenom
         user.email = req.body.email || user.email
-        if(req.body.password) {
+        if (req.body.password) {
             user.password = req.body.password
         }
 
         const updatedUser = await user.save()
 
         res.json({
-            _id: user._id, 
-            nom: user.nom, 
-            prenom: user.prenom, 
+            _id: user._id,
+            nom: user.nom,
+            prenom: user.prenom,
             email: user.email,
-            isAdmin: user.isAdmin, 
+            isAdmin: user.isAdmin,
             token: generateToken(user._id),
         })
 
@@ -118,8 +117,8 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 
 
 export {
-    authUser, 
-    registerUser, 
-    getUserProfile, 
-    updateUserProfile, 
+    authUser,
+    registerUser,
+    getUserProfile,
+    updateUserProfile,
 }
