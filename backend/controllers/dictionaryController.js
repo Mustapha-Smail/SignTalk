@@ -23,19 +23,19 @@ const getDictionaryById = asyncHandler(async (req, res) => {
     else {
         res.status(404)
         throw new Error('Pair not found')
-    } 
+    }
 })
 
 //@desc     Get a random Pair
 //@route    GET /api/dictionary/random
 //@access   Public
-const getRandomWord = asyncHandler (async (req, res) => {
+const getRandomWord = asyncHandler(async (req, res) => {
 
     const category = req.body.category || 'facile'
 
     const randomWords =  await Dictionary.aggregate([
         {$match: { category:category }},
-        {$sample: { size:1 }}
+        {$sample: { size: 1 } }
     ])
 
     const randomWord = randomWords[0]
@@ -54,24 +54,24 @@ const getRandomWord = asyncHandler (async (req, res) => {
 //@desc     Get quizz LSF -> FR
 //@route    GET /api/dictionary/quizz/lsf
 //@access   Public 
-const getQuizzLsf = asyncHandler (async (req, res) => {
+const getQuizzLsf = asyncHandler(async (req, res) => {
 
     const category = req.body.category || 'facile'
 
     const randomPairs = await getRandomPair(category)
 
-    if(!randomPairs){
+    if (!randomPairs) {
         res.status(500)
         throw new Error('Internal Server Error')
     }
 
     // get random index from the list of random words 
     const randomIndex = Math.floor(Math.random() * randomPairs.length)
-    
+
     // get the pair from the random index 
     const randomPair = randomPairs[randomIndex]
-    
-    if(!randomPair) {
+
+    if (!randomPair) {
         res.status(500)
         throw new Error('Internal Server Error')
     }
@@ -92,9 +92,9 @@ const getQuizzLsf = asyncHandler (async (req, res) => {
      * }
      */
     const quizz = {
-        multimedia : randomPair.videoId, 
-        words : extractedWords, 
-        correctWord : randomPair.gloss,
+        multimedia: randomPair.videoId,
+        words: extractedWords,
+        correctWord: randomPair.gloss,
         category : randomPair.category
     }
 
@@ -104,24 +104,24 @@ const getQuizzLsf = asyncHandler (async (req, res) => {
 //@desc     Get quizz LSF -> FR
 //@route    GET /api/dictionary/quizz/fr
 //@access   Public 
-const getQuizzFr = asyncHandler (async (req, res) => {
+const getQuizzFr = asyncHandler(async (req, res) => {
 
     const category = req.body.category || 'facile'
 
     const randomPairs = await getRandomPair(category)
 
-    if(!randomPairs){
+    if (!randomPairs) {
         res.status(500)
         throw new Error('Internal Server Error')
     }
 
     // get random index from the list of random words 
     const randomIndex = Math.floor(Math.random() * randomPairs.length)
-    
+
     // get the pair from the random index 
     const randomPair = randomPairs[randomIndex]
-    
-    if(!randomPair) {
+
+    if (!randomPair) {
         res.status(500)
         throw new Error('Internal Server Error')
     }
@@ -137,15 +137,15 @@ const getQuizzFr = asyncHandler (async (req, res) => {
     /**
      * quizz = {
      * word : word, 
-     * multimedia: [video_id_0, video_id_1, video_id_2, video_id_3] 
+     * multimedias: [video_id_0, video_id_1, video_id_2, video_id_3] 
      * ], 
      * correctMultimedia: video_id_3
      * }
      */
     const quizz = {
-        word : randomPair.gloss, 
-        multimedias : extractedMultimdeia, 
-        correctMultimedia : randomPair.videoId,
+        word: randomPair.gloss,
+        multimedias: extractedMultimdeia,
+        correctMultimedia: randomPair.videoId,
         category : randomPair.category
     }
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { Row, Col, Button, Form } from 'react-bootstrap'
-import { Navbar, Message } from '../../components'
+import { Row, Col } from 'react-bootstrap'
+import { Navbar, Message, FormBoot } from '../../components'
 
 import './profile.css'
 
@@ -96,60 +96,15 @@ const Profile = () => {
                     <center> 
                         <h1 className='pb-4'>Profile</h1>
                     </center>
-                    <Form onSubmit={submitHandler}>
-                        <Form.Group controlId='nom'>
-                            <Form.Label>Nom</Form.Label>
-                            <Form.Control 
-                                type='nom'
-                                placeholder='Entrez nom' 
-                                value={nom}
-                                onChange={(e)=>setNom(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-                        <Form.Group controlId='prenom'>
-                            <Form.Label>Prénom</Form.Label>
-                            <Form.Control 
-                                type='prenom'
-                                placeholder='Enter prénom' 
-                                value={prenom}
-                                onChange={(e)=>setPrenom(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-                        <Form.Group controlId='email'>
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control 
-                                type='email'
-                                placeholder='Entrez email' 
-                                value={email}
-                                onChange={(e)=>setEmail(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-                        <Form.Group controlId='password'>
-                            <Form.Label>Mot de passe</Form.Label>
-                            <Form.Control 
-                                type='password'
-                                placeholder='Entrez mot de passe' 
-                                value={password}
-                                onChange={(e)=>setPassword(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-                        <Form.Group controlId='confirmPassword'>
-                            <Form.Label>Confirmer mot de passe</Form.Label>
-                            <Form.Control 
-                                type='password'
-                                placeholder='Confirmez mot de passe' 
-                                value={confirmPassword}
-                                onChange={(e)=>setConfirmPassword(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
-
-                        <Button 
-                            type='submit'
-                            className='mt-4 btn-more'
-                        >
-                            Mettre à jour
-                        </Button>
-                    </Form>
+                    <FormBoot
+                        btnValue="Mettre à jour"
+                        submitHandler={submitHandler}
+                        nom={nom} setNom={setNom}
+                        prenom={prenom} setPrenom={setPrenom}
+                        email={email} setEmail={setEmail} 
+                        password={password} setPassword={setPassword} 
+                        confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword}
+                    />
                 </Col>
             </Row>
         </main>
