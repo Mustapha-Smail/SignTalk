@@ -87,3 +87,16 @@
 .st__quizz-button button {
   width: 50%; 
 }
+
+
+.btn-primary {
+  background-color: var(--color-footer) !important;
+  border: 1px solid white;
+  
+}
+
+.quizzfr__dropdown {
+  /* position: fixed; */
+  margin-left: 7.5%;
+  /* z-index: -1; */
+}
