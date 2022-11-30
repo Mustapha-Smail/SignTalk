@@ -45,7 +45,7 @@ describe('Dictionary API', () => {
 
     it('GET /api/dictionary/random --> return a mongodb object ID',  () => {
         return request(app)
-            .get('/api/dictionary/random')
+            .post('/api/dictionary/random')
             .expect('Content-Type', /json/)
             .expect(200)
             .then((res) => {
@@ -94,7 +94,7 @@ describe('Dictionary API', () => {
 
     it('GET /api/dictionary/quizz/lsf --> return a quizz obj with 1 image and 4 words ', () => {
         return request(app)
-            .get('/api/dictionary/quizz/lsf')
+            .post('/api/dictionary/quizz/lsf')
             .expect('Content-Type', /json/)
             .expect(200)
             .then( res => {
@@ -116,7 +116,7 @@ describe('Dictionary API', () => {
 
     it('GET /api/dictionary/quizz/fr --> return a quizz obj with 1 word and 4 images ', () => {
         return request(app)
-            .get('/api/dictionary/quizz/fr')
+            .post('/api/dictionary/quizz/fr')
             .expect('Content-Type', /json/)
             .expect(200)
             .then( res => {
