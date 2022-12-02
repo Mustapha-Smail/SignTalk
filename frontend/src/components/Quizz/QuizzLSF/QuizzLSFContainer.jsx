@@ -17,29 +17,7 @@ const QuizzLSFContainer = () => {
     correctWord: 'word_3'
 
   })
-
-  // const getData = async () => {
-  //   try {
-  //     const { data } = await axios.post(`api/dictionary/quizz/lsf`)
-  //     setQuizz(data)
-
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // }
-
-  // //Permit the synchronization
-  // useEffect(() => {
-  //   getData()
-  // }, [difficulte])
-
-
-  // // Change the game difficulty 
-  // const changeDifficulty = (diff) => {
-  //   setDifficulte(diff);
-  //   getData();
-  // }
-
+  
   const getData = async () => {
     try {
       const config = {
@@ -69,7 +47,7 @@ const QuizzLSFContainer = () => {
 
   return (
     <>
-        <div className="quizzfr__dropdown">
+        <div className="quizzlsf__dropdown">
           <Dropdown>
             <Dropdown.Toggle>
               {difficulte}
