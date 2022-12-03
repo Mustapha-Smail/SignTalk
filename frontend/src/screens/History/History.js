@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, CardImg } from 'react-bootstrap'
 import { Navbar, HistoryCard, Message, HistoryCount } from '../../components'
 import './History.css'
 import { Link } from 'react-router-dom'
@@ -64,6 +64,21 @@ const History = () => {
         }
     }
 
+    function bonnerep(nbrep)
+    {
+        if (nbrep >= 5)
+        {
+            //return image.src='/images/header-img.png';
+            return (<img id="social" src='/images/header-img.png' alt=""/>);
+        }
+        else
+        {
+            //return image.src='/images/SIGN.png';   
+            return (<img id="social" src='/images/SIGN.png' alt=""/>); 
+        }
+    }
+
+
     return (
         <>
             <Navbar />
@@ -78,6 +93,9 @@ const History = () => {
                     <Col sm={12} md={6}>
                         <HistoryCount quizzCount={historyCount.quizzFR} />
                     </Col>
+                    {/* <img id="social"><script>bonnerep(quizzCount=historyCount.quizzLSF)</></img>   */}
+                    {/* <img id="social" src='/images/SIGN.png' alt="" onLoad={"this.onload=null; this.src=bonnerep(historyCount.quizzLSF.correct);"}/>  */}
+                    {this.bonnerep(historyCount.quizzLSF)}
                 </Row>)}
                 {history && (<>
                     <Row>
@@ -91,7 +109,7 @@ const History = () => {
                                 <HistoryCard game={game} />
                             </Col>
                         ))}
-                    </Row>
+                    </Row>          
                 </>)}
             </main>
         </>
