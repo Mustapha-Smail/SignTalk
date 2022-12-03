@@ -46,7 +46,7 @@ describe('Alphabet API', () => {
 
     it('GET /api/alphabet/id --> return a alphabet by Id',  () => {
         return request(app)
-            .get('/api/alphabet/63579d10f54ce6bc84b12ce3')
+            .get('/api/alphabet/6385ec35a97a15c127306280')
             .expect('Content-Type', /json/)
             .expect(200)
             .then((res) => {
