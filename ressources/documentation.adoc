@@ -1,9 +1,7 @@
 = SignTalk : Application web d’apprentissage de langue des signes française
-:author: *Bakari Traoré* 
-:email: <b.traore771@gmail.com>
-:revnumber: v.0.4
-:revdate: 15.11.2022
-:revremark: First draft
+:revnumber: v.1.0.0.alpha
+:revdate: 05/12/2022
+:revremark: Version alpha
 :imagesdir: ../ressources/images
 
 == Partie 1 : Présentation 
@@ -135,7 +133,7 @@ Cette fonctionnalité permet à l'utilisateur de décomposer un mot en lettre et
 
 === Quatrième itération
 
-* Feature - inscription
+* Feature - Inscription
 
 Mise en service le 15/11/2022
 
@@ -143,7 +141,7 @@ image:feature-inscription.png[Wireframe_inscription,300,300]
 
 Cette fonctionnalité permet à l'utilisateur de s'inscrire sur notre application.
 
-* Feature - connexion
+* Feature - Connexion
 
 Mise en service le 15/11/2022
 
@@ -151,7 +149,7 @@ image:feature-connexion.png[Wireframe_connexion,300,300]
 
 Cette fonctionnalité permet à l'utilisateur de se connecter sur notre application.
 
-* Feature - profil
+* Feature - Profil
 
 
 image:feature-espace_user.png[Wireframe_espace_user,300,300]
@@ -163,13 +161,27 @@ Cette fonctionnalité permet à l'utilisateur de modifier son profil.
 * Feature - Historique 
 
 
-image:historique_feature.png[Wireframe_historique,300,300]
+image:feature-historique.png[Wireframe_historique,300,300]
 
 Ajouter l'historique des jeux joués par un utilisateur
 
 à chaque partie que l'utilisateur fait, un historique de cette dernière est enregistrée.
 
 une page historique est disponible dans l'espace utilisateur, avec le décompte des parties jouées, le nombre de parties correctes et incorrectes, ainsi que le détails de chaque partie.
+
+* Feature - Difficulté 
+
+image:feature-difficulty.png[Wireframe_difficulte_category,300,300]
+
+Système de catégorisation des mots affichés en fonction du niveau choisi par l'utilisateur.
+
+Trois niveaux différents sont disponibles : 
+
+* Facile 
+* Moyen
+* Difficile
+
+L'utilisateur choisit le niveau de difficulté qui lui convient et le jeu ne contient que les mots de la difficulté choisie.
 
 
 === Diagrames de séquence
