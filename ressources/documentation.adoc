@@ -158,6 +158,18 @@ image:feature-espace_user.png[Wireframe_espace_user,300,300]
 
 Cette fonctionnalité permet à l'utilisateur de modifier son profil.
 
+=== Cinquième itération
+
+* Feature - Historique 
+
+
+image:historique_feature.png[Wireframe_historique,300,300]
+
+Ajouter l'historique des jeux joués par un utilisateur
+
+à chaque partie que l'utilisateur fait, un historique de cette dernière est enregistrée.
+
+une page historique est disponible dans l'espace utilisateur, avec le décompte des parties jouées, le nombre de parties correctes et incorrectes, ainsi que le détails de chaque partie.
 
 
 === Diagrames de séquence
@@ -193,5 +205,5 @@ image:Diagram-connexion.png[Diagram_connexion,300,300]
 === Diagramme de classe
 
 
-image:Diagramme-de-classes.png[Diagram_decomposition,300,300]
+image:diagram_class.png[Diagram_decomposition,900,900]
 

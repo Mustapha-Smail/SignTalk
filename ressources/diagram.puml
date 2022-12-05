@@ -36,13 +36,38 @@ package SignTalk_DB {
             email: string
             password: string
             isAdmin: boolean 
-            authUser(email: String,password: String), 
-            registerUser(nom: String,prenom: String, email: String, password: String), 
-            getUserProfile(id: String), 
-            updateUserProfile(id: String), 
+            authUser(email: String,password: String)
+            registerUser(nom: String,prenom: String, email: String, password: String)
+            getUserProfile(id: String)
+            updateUserProfile(id: String)
     }
 
-    Lsf <- Alphabet
+    class Details {
+        word: String
+        multimedias: Array<String>
+        correctMultimedia: String 
+        multimedia: String 
+        words: Array<String> 
+        correctWord: String 
+    }
+
+    class Game {
+        type: string
+        details: Details 
+        isCorrect: boolean
+    }
+
+    class History {
+        game: Game 
+        userId: id 
+        archiveGame(type: String, details: Details, isCorrect: boolean)
+        getHistory(id: id)
+        deleteHistory(id: id)
+    }
+
+    Alphabet <-- Lsf  
+    Details <-- Game 
+    Game <-- History
 }
 
 @enduml

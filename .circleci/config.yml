@@ -3,7 +3,7 @@ orbs:
   node: circleci/node@5.0.2
   codecov: codecov/codecov@3.2.3
 jobs:
-  test: 
+  test:
     executor: node/default # use the default executor defined within the orb
     steps:
       - checkout
@@ -16,6 +16,20 @@ jobs:
           root: ~/project
           paths:
             - .
+  doc:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm run doc
+          name: Get Documentation
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+
 workflows:
   build_test: # this can be any name you choose
     jobs:
@@ -25,3 +39,6 @@ workflows:
       - node/test:
           post-steps:
             - codecov/upload
+  get_doc:
+    jobs:
+      - doc
