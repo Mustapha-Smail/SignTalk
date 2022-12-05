@@ -64,20 +64,6 @@ const History = () => {
         }
     }
 
-    function bonnerep(nbrep)
-    {
-        if (nbrep >= 5)
-        {
-            //return image.src='/images/header-img.png';
-            return (<img id="social" src='/images/header-img.png' alt=""/>);
-        }
-        else
-        {
-            //return image.src='/images/SIGN.png';   
-            return (<img id="social" src='/images/SIGN.png' alt=""/>); 
-        }
-    }
-
 
     return (
         <>
@@ -93,9 +79,6 @@ const History = () => {
                     <Col sm={12} md={6}>
                         <HistoryCount quizzCount={historyCount.quizzFR} />
                     </Col>
-                    {/* <img id="social"><script>bonnerep(quizzCount=historyCount.quizzLSF)</></img>   */}
-                    {/* <img id="social" src='/images/SIGN.png' alt="" onLoad={"this.onload=null; this.src=bonnerep(historyCount.quizzLSF.correct);"}/>  */}
-                    {this.bonnerep(historyCount.quizzLSF)}
                 </Row>)}
                 {history && (<>
                     <Row>

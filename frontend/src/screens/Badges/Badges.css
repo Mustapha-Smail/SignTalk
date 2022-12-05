@@ -1,0 +1,6 @@
+.locked {
+  filter: grayscale(1);
+}
+.unlocked {
+  filter: grayscale(0);
+}
