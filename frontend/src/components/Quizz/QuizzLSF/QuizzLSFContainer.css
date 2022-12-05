@@ -96,5 +96,7 @@
 }
 
 .quizzlsf__dropdown {
-  margin-left: 7.5%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

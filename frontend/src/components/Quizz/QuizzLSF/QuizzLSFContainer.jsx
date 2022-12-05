@@ -47,7 +47,7 @@ const QuizzLSFContainer = () => {
 
   return (
     <>
-        <div className="quizzlsf__dropdown">
+        <div className="quizzlsf__dropdown section__padding">
           <Dropdown>
             <Dropdown.Toggle>
               {difficulte}
