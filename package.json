@@ -12,7 +12,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
-    "doc": "rm -f ressources/documentation*.pdf && asciidoctor-web-pdf ressources/documentation.adoc && mv ressources/documentation.pdf ressources/documentation_v$npm_package_version.pdf && rm -f ressources/documentation.html"
+    "doc": "rm -f ressources/documentation*.pdf && asciidoctor-web-pdf ressources/documentation.adoc && mv ressources/documentation.pdf ressources/documentation_v$npm_package_version.pdf && rm -f ressources/documentation.html",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --force --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
