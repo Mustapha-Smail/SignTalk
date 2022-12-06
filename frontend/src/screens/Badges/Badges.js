@@ -90,23 +90,23 @@ const Badges = () => {
                 <main className='section__padding Badge__body'>
 
                     <Row>   
-                        <CardImgContainer imgSrc='/images/Bronze-signe-badge.png' text='Félicitation vous avez eu au moins 1 bonne réponse au jeu 4 mots 1 image' className={bronzeLSF ? 'unlocked' : 'locked'}/>
+                        <CardImgContainer imgSrc='/images/Bronze-signe-badge.png' text={bronzeLSF ? 'Félicitation vous avez eu au moins 1 bonne réponse au jeu : 4 mots 1 image' : 'Badge de niveau 1, obtenir au moins 1 bonne réponse au jeu : 4 mots 1 image'} className={bronzeLSF ? 'unlocked' : 'locked'}/>
 
-                        <CardImgContainer imgSrc='/images/Silver-signe-badge.png' text='Félicitation vous avez eu au moins 10 bonnes réponses au jeu 4 mots 1 image' className={silverLSF ? 'unlocked' : 'locked'}/>
+                        <CardImgContainer imgSrc='/images/Silver-signe-badge.png' text={silverLSF ? 'Félicitation vous avez eu au moins 10 bonne réponse au jeu : 4 mots 1 image' : 'Badge de niveau 2, obtenir au moins 10 bonnes réponses au jeu : 4 mots 1 image'} className={silverLSF ? 'unlocked' : 'locked'}/>
 
-                        <CardImgContainer imgSrc='/images/Gold-signe-badge.png' text='Félicitation vous avez eu au moins 30 bonnes réponses au jeu 4 mots 1 image' className={goldLSF ? 'unlocked' : 'locked'}/>
+                        <CardImgContainer imgSrc='/images/Gold-signe-badge.png' text={goldLSF ? 'Félicitation vous avez eu au moins 30 bonne réponse au jeu : 4 mots 1 image' : 'Badge de niveau 3, obtenir au moins 30 bonnes réponses au jeu : 4 mots 1 image'} className={goldLSF ? 'unlocked' : 'locked'}/>
 
-                        <CardImgContainer imgSrc='/images/Diamond-signe-badge.png' text='Félicitation vous avez eu au moins 50 bonnes réponses au jeu 4 mots 1 image' className={diamondLSF ? 'unlocked' : 'locked'} />
+                        <CardImgContainer imgSrc='/images/Diamond-signe-badge.png' text={diamondLSF ? 'Félicitation vous avez eu au moins 50 bonne réponse au jeu : 4 mots 1 image' : 'Badge de niveau 4, obtenir au moins 50 bonnes réponses au jeu : 4 mots 1 image'} className={diamondLSF ? 'unlocked' : 'locked'} />
                     </Row>
 
                     <Row>   
-                        <CardImgContainer imgSrc='/images/Bronze-mot-badge.png' text='Félicitation vous avez eu au moins 1 bonnes réponses au jeu 4 images 1 mot' className={bronzeM ? 'unlocked' : 'locked'}/>
+                        <CardImgContainer imgSrc='/images/Bronze-mot-badge.png' text={bronzeM ? 'Félicitation vous avez eu au moins 1 bonnes réponses au jeu : 4 images 1 mot' : 'Badge de niveau 1, obtenir au moins 1 bonne réponse au jeu : 4 images 1 mot'} className={bronzeM ? 'unlocked' : 'locked'}/>
 
-                        <CardImgContainer imgSrc='/images/Silver-mot-badge.png' text='Félicitation vous avez eu au moins 10 bonnes réponses au jeu 4 images 1 mot' className={silverM ? 'unlocked' : 'locked'}/>
+                        <CardImgContainer imgSrc='/images/Silver-mot-badge.png' text={silverM ? 'Félicitation vous avez eu au moins 10 bonnes réponses au jeu : 4 images 1 mot' : 'Badge de niveau 2, obtenir au moins 10 bonnes réponses au jeu : 4 images 1 mot'} className={silverM ? 'unlocked' : 'locked'}/>
 
-                        <CardImgContainer imgSrc='/images/Gold-mot-badge.png' text='Félicitation vous avez eu au moins 30 bonnes réponses au jeu 4 images 1 mot' className={goldM ? 'unlocked' : 'locked'}/>   
+                        <CardImgContainer imgSrc='/images/Gold-mot-badge.png' text={goldM ? 'Félicitation vous avez eu au moins 30 bonnes réponses au jeu : 4 images 1 mot' : 'Badge de niveau 3, obtenir au moins 30 bonnes réponses au jeu : 4 images 1 mot'} className={goldM ? 'unlocked' : 'locked'}/>   
 
-                        <CardImgContainer imgSrc='/images/Diamond-mot-badge.png' text='Félicitation vous avez eu au moins 50 bonnes réponses au jeu 4 images 1 mot' className={diamondM ? 'unlocked' : 'locked'} />
+                        <CardImgContainer imgSrc='/images/Diamond-mot-badge.png' text={diamondM ? 'Félicitation vous avez eu au moins 50 bonnes réponses au jeu : 4 images 1 mot' : 'Badge de niveau 4, obtenir au moins 50 bonnes réponses au jeu : 4 images 1 mot'} className={diamondM ? 'unlocked' : 'locked'} />
                     </Row>
                 </main>
             </div>  
