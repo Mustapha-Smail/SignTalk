@@ -11,9 +11,16 @@ const Badges = () => {
     const navigate = useNavigate()
     const [historyCount, setHistoryCount] = useState(null)
     const [score, setScore] = useState(null)
-    const [bronze, setBronze] = useState(null)
-    const [silver, setSilver] = useState(null)
-    const [gold, setGold] = useState(null)
+    const [score2, setScore2] = useState(null)
+    const [bronzeLSF, setBronzeLSF] = useState(null)
+    const [silverLSF, setSilverLSF] = useState(null)
+    const [goldLSF, setGoldLSF] = useState(null)
+    const [diamondLSF, setDiamondLSF] = useState(null)
+
+    const [bronzeM, setBronzeM] = useState(null)
+    const [silverM, setSilverM] = useState(null)
+    const [goldM, setGoldM] = useState(null)
+    const [diamondM, setDiamondM] = useState(null)
     const [error, setError] = useState(null)
 
     const userInfoFromStorage = JSON.parse(localStorage.getItem('userInfo'))
@@ -47,15 +54,30 @@ const Badges = () => {
         getUserData()
 
         if (historyCount) {
-            const sc = historyCount.quizzLSF.correct + historyCount.quizzFR.correct
+            const sc = historyCount.quizzLSF.correct
             setScore(sc)
             if (score > 0) {
-                setBronze(true)
+                setBronzeLSF(true)
             } else if (score > 10) {
-                setSilver(true)
+                setSilverLSF(true)
             } else if (score > 30) {
-                setGold(true)
+                setGoldLSF(true)
+            } else if (score > 50) {
+                setDiamondLSF(true)
             }
+
+            const sc2 = historyCount.quizzFR.correct
+            setScore2(sc2)
+            if (score2 > 0) {
+                setBronzeM(true)
+            } else if (score > 10) {
+                setSilverM(true)
+            } else if (score > 30) {
+                setGoldM(true)
+            } else if (score > 50) {
+                setDiamondM(true)
+            }
+
         }
     }, [historyCount, navigate, score, userInfoFromStorage]);
 
@@ -63,24 +85,62 @@ const Badges = () => {
 
     return (
         <>
-            <div className="gradient__bg">
+            <div className="gradient__bg">  
                 <Navbar />
                 <main className='section__padding'>
 
-                    <Row>
-                        <Col>
-                            <CardGroup>
+                    <Row>   
+                        {/* <Col> */}
+                            {/* <CardGroup> */}
+                            <Col sm={12} md={7} lg={4} xl={3} style={{padding: 50}}>
                                 <Card>
-                                    <CardImg src='/images/bronze-badge.png' className={bronze ? 'unlocked' : 'locked'} />
+                                    <CardImg src='/images/Bronze-signe-badge.png' className={bronzeLSF ? 'unlocked' : 'locked'} />
                                 </Card>
+                            </Col>
+                            <Col sm={12} md={7} lg={4} xl={3} style={{padding: 50}}>
                                 <Card>
-                                    <CardImg src='/images/silver-badge.png' className={silver ? 'unlocked' : 'locked'} />
+                                    <CardImg src='/images/Silver-signe-badge.png' className={silverLSF ? 'unlocked' : 'locked'} />
                                 </Card>
+                            </Col>
+                            <Col sm={12} md={6} lg={4} xl={3} style={{padding: 50}}>
                                 <Card>
-                                    <CardImg src='/images/gold-badge.png' className={gold ? 'unlocked' : 'locked'} />
+                                    <CardImg src='/images/Gold-signe-badge.png' className={goldLSF ? 'unlocked' : 'locked'} />
                                 </Card>
-                            </CardGroup>
-                        </Col>
+                            </Col>
+                            <Col sm={12} md={6} lg={4} xl={3} style={{padding: 50}}>
+                                <Card>
+                                    <CardImg src='/images/Diamond-signe-badge.png' className={diamondLSF ? 'unlocked' : 'locked'} />
+                                </Card>
+                            </Col>
+                            {/* </CardGroup> */}
+                        {/* </Col> */}
+                    </Row>
+
+                    <Row>   
+                        {/* <Col> */}
+                            {/* <CardGroup> */}
+                            <Col sm={12} md={7} lg={4} xl={3} style={{padding: 50}}>
+                                <Card>
+                                    <CardImg src='/images/Bronze-signe-badge.png' className={bronzeM ? 'unlocked' : 'locked'} />
+                                </Card>
+                            </Col>
+                            <Col sm={12} md={7} lg={4} xl={3} style={{padding: 50}}>
+                                <Card>
+                                    <CardImg src='/images/Silver-signe-badge.png' className={silverM ? 'unlocked' : 'locked'} />
+                                </Card>
+                            </Col>
+                            <Col sm={12} md={6} lg={4} xl={3} style={{padding: 50}}>
+                                <Card>
+                                    <CardImg src='/images/Gold-signe-badge.png' className={goldM ? 'unlocked' : 'locked'} />
+                                </Card>
+                            </Col>
+                            <Col sm={12} md={6} lg={4} xl={3} style={{padding: 50}}>
+                                <Card>
+                                    <CardImg src='/images/Diamond-signe-badge.png' className={diamondM ? 'unlocked' : 'locked'} />
+                                </Card>
+                            </Col>
+                            {/* </CardGroup> */}
+                        {/* </Col> */}
                     </Row>
 
                 </main>
