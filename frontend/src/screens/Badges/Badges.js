@@ -90,7 +90,7 @@ const Badges = () => {
             if (score2 >= 50) {
                 setDiamondM(true)
             }
-        }
+        } 
     }, [historyCount, navigate, score, score2, userInfoFromStorage]);
 
 
