@@ -38,6 +38,12 @@ const Links = ({ className }) => {
               <LinkContainer to='/profile'>
                 <NavDropdown.Item>Profile</NavDropdown.Item>
               </LinkContainer>
+              <LinkContainer to='/history'>
+                <NavDropdown.Item>Historique</NavDropdown.Item>
+              </LinkContainer>
+              <LinkContainer to='/badges'>
+                <NavDropdown.Item>Badges</NavDropdown.Item>
+              </LinkContainer>
               <NavDropdown.Item onClick={logoutHandler}>Déconnexion</NavDropdown.Item>
             </NavDropdown>
           )
