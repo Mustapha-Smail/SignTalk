@@ -3,7 +3,7 @@ orbs:
   node: circleci/node@5.0.2
   codecov: codecov/codecov@3.2.3
 jobs:
-  test: 
+  test:
     executor: node/default # use the default executor defined within the orb
     steps:
       - checkout
@@ -16,6 +16,7 @@ jobs:
           root: ~/project
           paths:
             - .
+
 workflows:
   build_test: # this can be any name you choose
     jobs:
