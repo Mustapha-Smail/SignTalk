@@ -17,7 +17,7 @@ export { default as Footer } from './Home/Footer/Footer.jsx'
 export { default as ImageContainer } from './elements/ImageContainer/ImageContainer.jsx'
 export { default as TextContainer } from './elements/TextContainer/TextContainer.jsx'
 export { default as ButtonContainer } from './elements/ButtonContainer/ButtonContainer.jsx'
-export { default as CardImgContainer } from './elements/CardImgContainer/CardImgContainer.jsx'
+
 
 /**
  * Containers for pages 
@@ -32,28 +32,21 @@ export { default as AlphabetMenuMobile } from './Alphabet/AlphabetMenuMobile/Alp
  */
 export { default as QuizzButton } from './Quizz/QuizzButton/QuizzButton.jsx'
 export { default as QuizzLSFContainer } from './Quizz/QuizzLSF/QuizzLSFContainer.jsx'
-export { default as QuizzFRContainer } from './Quizz/QuizzFR/QuizzFRContainer.jsx'
+export { default as QuizzFRContainer} from './Quizz/QuizzFR/QuizzFRContainer.jsx'
 
 /**
  * Search Elements
  */
-export { default as SearchBar } from './Search/SearchBar.jsx'
-export { default as SearchContainer } from './Search/SearchContainer.jsx'
-
-/**
- * Decomposition Elements
- */
-export { default as DecompoCarousel } from './Decomposition/DecompoCarousel.jsx'
+ export { default as SearchBar} from './Search/SearchBar.jsx'
+ export { default as SearchContainer} from './Search/SearchContainer.jsx'
+ 
+ /**
+  * Decomposition Elements
+  */
+ export { default as DecompoCarousel} from './Decomposition/DecompoCarousel.jsx'
 
 /**
  * Auth Elements
  */
-export { default as Message } from './Message/Message'
-export { default as Loader } from './Loader/Loader'
-export { default as FormBoot } from './FormBoot/FormBoot'
-
-/**
- * History Elements
- */
-export { default as HistoryCard } from './History/HistoryCard'
-export { default as HistoryCount } from './History/HistoryCount'
+ export { default as Message } from './Message/Message'
+ export { default as Loader } from './Loader/Loader'

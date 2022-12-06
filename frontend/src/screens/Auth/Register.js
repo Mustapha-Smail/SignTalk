@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Row, Col, Container } from 'react-bootstrap'
+import { Form, Button, Row, Col, Container } from 'react-bootstrap'
 import axios from 'axios'
 
-import { Message, Loader, Navbar, FormBoot } from '../../components'
+import { Message, Loader, Navbar } from '../../components'
 
 import './auth.css'
 
@@ -76,19 +76,71 @@ const Register = () => {
                         {message && <Message variant='danger'>{message}</Message>}
                         {loading 
                             ? <Loader /> 
-                            :<FormBoot
-                                btnValue="Inscription"
-                                submitHandler={submitHandler}
-                                nom={nom} setNom={setNom}
-                                prenom={prenom} setPrenom={setPrenom}
-                                email={email} setEmail={setEmail} 
-                                password={password} setPassword={setPassword} 
-                                confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword}
-                            />
+                            :<Form onSubmit={submitHandler}>
+                                <Form.Group controlId='nom'>
+                                    <Form.Label>Nom</Form.Label>
+                                    <Form.Control 
+                                        type='name'
+                                        placeholder='Entrez Nom' 
+                                        value={nom}
+                                        required={true}
+                                        onChange={(e)=>setNom(e.target.value)}
+                                    ></Form.Control>
+                                </Form.Group>
+                                <Form.Group controlId='prenom'>
+                                    <Form.Label>Prenom</Form.Label>
+                                    <Form.Control 
+                                        type='name'
+                                        placeholder='Entrez Prenom' 
+                                        value={prenom}
+                                        required={true}
+                                        onChange={(e)=>setPrenom(e.target.value)}
+                                    ></Form.Control>
+                                </Form.Group>
+                                <Form.Group controlId='email'>
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control 
+                                        type='email'
+                                        placeholder='Entrez email' 
+                                        value={email}
+                                        required={true}
+                                        onChange={(e)=>setEmail(e.target.value)}
+                                    ></Form.Control>
+                                </Form.Group>
+                                <Form.Group controlId='password'>
+                                    <Form.Label>Mot de passe</Form.Label>
+                                    <Form.Control 
+                                        type='password'
+                                        placeholder='Entrez mot de passe' 
+                                        value={password}
+                                        required={true}
+                                        onChange={(e)=>setPassword(e.target.value)}
+                                    ></Form.Control>
+                                </Form.Group>
+                                <Form.Group controlId='confirmPassword'>
+                                    <Form.Label>Confirmez mot de passe</Form.Label>
+                                    <Form.Control 
+                                        type='password'
+                                        placeholder='Confirmez mot de passe' 
+                                        value={confirmPassword}
+                                        required={true}
+                                        onChange={(e)=>setConfirmPassword(e.target.value)}
+                                    ></Form.Control>
+                                </Form.Group>
+                                <Button
+                                    type='submit'
+                                    className='mt-3 btn-more'
+                                >
+                                    Inscription
+                                </Button>
+                            </Form>
                         }
                         <Row className='py-3'>
                         <Col>
-                            Vous avez un compte ? <Link to={redirect ? `/login?redirect=${redirect}` : '/login'} className='text-success' >Connectez-vous</Link>
+                            Vous avez un compte ? 
+                            <Link to={redirect ? `/login?redirect=${redirect}` : '/login'} >
+                                Connectez-vous
+                            </Link>
                         </Col>
                         </Row>
                     </Col>

@@ -98,8 +98,7 @@ const Login = () => {
                         }
                         <Row className='py-3'>
                             <Col>
-                            Vous n'avez pas de compte ? <Link to={redirect ? `/register?redirect=${redirect}` : '/register'} className='text-success'>Inscription</Link>
-                            </Col>
+                            Vous n'avez pas de compte ? <Link to={redirect ? `/register?redirect=${redirect}` : '/register'} className='text-success'>Inscription</Link></Col>
                         </Row>
                     </Col>
                 </Row>

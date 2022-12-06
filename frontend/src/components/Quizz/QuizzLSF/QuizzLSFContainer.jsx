@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import swal from 'sweetalert'
 import { ImageContainer, TextContainer, ButtonContainer } from '../../../components'
-import { notif } from '../../../utils'
-
 import './QuizzLSFContainer.css';
-
 
 
 const QuizzLSFContainer = () => {
@@ -30,6 +28,29 @@ const QuizzLSFContainer = () => {
     getData()
   }, [])
 
+  const notif = (answer) => {
+    let status = 'incorrect'; 
+    if (answer === quizz.correctWord) {
+        status = 'correct'
+    }
+    swal({
+        title: status === 'correct' ? "Bien joué !" : "Oh non :-(",
+        text: status === 'correct' ? "Tu as choisis la bonne réponse !" : "Tu as choisis la mauvaise réponse ! Reéssaies !",
+        icon: status === 'correct' ? "success" : "error",
+        button: {
+            text: "Suivant",
+            value: true,
+            visible: true,
+            className: status === 'correct' ? "green-bg" : "red-bg",
+            closeModal: true,
+        },
+        closeOnClickOutside: false,
+        closeOnEsc: false,
+    }).then(()=>{
+        getData()
+    });
+  }
+
   return (
     <>
       <div className="st__quizz">
@@ -38,7 +59,7 @@ const QuizzLSFContainer = () => {
         </div>
         <div className="st__quizz-content">
           {quizz.words.map((word, index) => (
-            <div className={`st__quizz-word${index}`} onClick={() => notif(word, quizz, getData)}>
+            <div className={`st__quizz-word${index}`} onClick={() => notif(word)}>
               <TextContainer content={word}/>
             </div>
           ))}
