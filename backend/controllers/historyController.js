@@ -78,6 +78,10 @@ const getHistory = asyncHandler(async (req, res) => {
                 : game.game.isCorrect ? count.quizzFR.correct++ : count.quizzFR.incorrect++
         })
 
+        if (count.quizzLSF.correct >= 10)
+        {
+                
+        }
 
         res.status(200).json({ historyGame, count })
     } else {
