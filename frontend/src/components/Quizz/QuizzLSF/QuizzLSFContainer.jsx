@@ -1,71 +1,83 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import swal from 'sweetalert'
 import { ImageContainer, TextContainer, ButtonContainer } from '../../../components'
+import { notif } from '../../../utils'
+import { Dropdown } from 'react-bootstrap'
+
 import './QuizzLSFContainer.css';
+
 
 
 const QuizzLSFContainer = () => {
 
+  const [difficulte, setDifficulte] = useState("Difficulté")
   const [quizz, setQuizz] = useState({
     multimedia: 'videoId',
-    words: ['word_1', 'word_2', 'word_3', 'word_4'], 
+    words: ['word_1', 'word_2', 'word_3', 'word_4'],
     correctWord: 'word_3'
-    
-  })
 
+  })
+  
   const getData = async () => {
     try {
-      const {data}  = await axios.get(`api/dictionary/quizz/lsf`)
+      const config = {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      const category = difficulte !== "Difficulté" ? difficulte : null
+      const { data } = await axios.post(`/api/dictionary/quizz/lsf`, { category }, config)
       setQuizz(data)
-
     } catch (err) {
       console.error(err);
     }
   }
 
+  //Permit the synchronization
   useEffect(() => {
     getData()
-  }, [])
+  }, [difficulte])
 
-  const notif = (answer) => {
-    let status = 'incorrect'; 
-    if (answer === quizz.correctWord) {
-        status = 'correct'
-    }
-    swal({
-        title: status === 'correct' ? "Bien joué !" : "Oh non :-(",
-        text: status === 'correct' ? "Tu as choisis la bonne réponse !" : "Tu as choisis la mauvaise réponse ! Reéssaies !",
-        icon: status === 'correct' ? "success" : "error",
-        button: {
-            text: "Suivant",
-            value: true,
-            visible: true,
-            className: status === 'correct' ? "green-bg" : "red-bg",
-            closeModal: true,
-        },
-        closeOnClickOutside: false,
-        closeOnEsc: false,
-    }).then(()=>{
-        getData()
-    });
+
+  // Change the game difficulty 
+  const changeDifficulty = (diff) => {
+    setDifficulte(diff);
+    getData();
   }
 
   return (
     <>
+        <div className="quizzlsf__dropdown section__padding">
+          <Dropdown>
+            <Dropdown.Toggle>
+              {difficulte}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item onClick={() => changeDifficulty("facile")}>
+                facile
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => changeDifficulty("moyen")}>
+                moyen
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => changeDifficulty("difficile")}>
+                difficile
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
       <div className="st__quizz">
         <div className="st__quizz-image">
-          <ImageContainer videoId={quizz.multimedia}/>
+          <ImageContainer videoId={quizz.multimedia} />
         </div>
         <div className="st__quizz-content">
           {quizz.words.map((word, index) => (
-            <div className={`st__quizz-word${index}`} onClick={() => notif(word)}>
-              <TextContainer content={word}/>
+            <div className={`st__quizz-word${index}`} onClick={() => notif(word, quizz, getData)}>
+              <TextContainer content={word} />
             </div>
           ))}
         </div>
         <div className="st__quizz-button">
-          <ButtonContainer onClickMethod={getData}/>
+          <ButtonContainer onClickMethod={getData} />
         </div>
       </div>
     </>

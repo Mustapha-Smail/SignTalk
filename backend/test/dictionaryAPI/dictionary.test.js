@@ -35,7 +35,8 @@ describe('Dictionary API', () => {
                         expect.objectContaining({
                             videoId: expect.any(String),
                             gloss: expect.any(String),
-                            type: expect.any(String)
+                            type: expect.any(String), 
+                            category : expect.any(String)
                         })
                     ])
                 )
@@ -44,7 +45,7 @@ describe('Dictionary API', () => {
 
     it('GET /api/dictionary/random --> return a mongodb object ID',  () => {
         return request(app)
-            .get('/api/dictionary/random')
+            .post('/api/dictionary/random')
             .expect('Content-Type', /json/)
             .expect(200)
             .then((res) => {
@@ -58,7 +59,7 @@ describe('Dictionary API', () => {
 
     it('GET /api/dictionary/id --> return a Dictionary by Id',  () => {
         return request(app)
-            .get('/api/dictionary/63579d0ff54ce6bc84b12aa7')
+            .get('/api/dictionary/6385ec34a97a15c127306043')
             .expect('Content-Type', /json/)
             .expect(200)
             .then((res) => {
@@ -70,7 +71,8 @@ describe('Dictionary API', () => {
                     expect.objectContaining({
                         videoId: expect.any(String),
                         gloss: expect.any(String),
-                        type: expect.any(String)
+                        type: expect.any(String),
+                        category : expect.any(String)
                     })
                 )
             })
@@ -92,7 +94,7 @@ describe('Dictionary API', () => {
 
     it('GET /api/dictionary/quizz/lsf --> return a quizz obj with 1 image and 4 words ', () => {
         return request(app)
-            .get('/api/dictionary/quizz/lsf')
+            .post('/api/dictionary/quizz/lsf')
             .expect('Content-Type', /json/)
             .expect(200)
             .then( res => {
@@ -106,6 +108,7 @@ describe('Dictionary API', () => {
                         ])
                         ,
                         correctWord: expect.any(String),
+                        category : expect.any(String)
                     })
                 )
             })
@@ -113,7 +116,7 @@ describe('Dictionary API', () => {
 
     it('GET /api/dictionary/quizz/fr --> return a quizz obj with 1 word and 4 images ', () => {
         return request(app)
-            .get('/api/dictionary/quizz/fr')
+            .post('/api/dictionary/quizz/fr')
             .expect('Content-Type', /json/)
             .expect(200)
             .then( res => {
@@ -123,7 +126,8 @@ describe('Dictionary API', () => {
                     expect.objectContaining({
                         word: expect.any(String),
                         multimedias: expect.arrayContaining([expect.any(String)]),
-                        correctMultimedia: expect.any(String)
+                        correctMultimedia: expect.any(String),
+                        category : expect.any(String)
                     })
                 )
             })

@@ -87,3 +87,16 @@
 .st__quizz-button button {
   width: 50%; 
 }
+
+
+.btn-primary {
+  background-color: var(--color-footer) !important;
+  border: 1px solid white;
+  
+}
+
+.quizzlsf__dropdown {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
