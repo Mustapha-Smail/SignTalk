@@ -90,8 +90,6 @@ const Badges = () => {
                 <main className='section__padding'>
 
                     <Row>   
-                        {/* <Col> */}
-                            {/* <CardGroup> */}
                             <Col sm={12} md={7} lg={4} xl={3} style={{padding: 50}}>
                                 <Card>
                                     <CardImg src='/images/Bronze-signe-badge.png' className={bronzeLSF ? 'unlocked' : 'locked'} />
@@ -112,13 +110,9 @@ const Badges = () => {
                                     <CardImg src='/images/Diamond-signe-badge.png' className={diamondLSF ? 'unlocked' : 'locked'} />
                                 </Card>
                             </Col>
-                            {/* </CardGroup> */}
-                        {/* </Col> */}
                     </Row>
 
                     <Row>   
-                        {/* <Col> */}
-                            {/* <CardGroup> */}
                             <Col sm={12} md={7} lg={4} xl={3} style={{padding: 50}}>
                                 <Card>
                                     <CardImg src='/images/Bronze-signe-badge.png' className={bronzeM ? 'unlocked' : 'locked'} />
@@ -139,8 +133,6 @@ const Badges = () => {
                                     <CardImg src='/images/Diamond-signe-badge.png' className={diamondM ? 'unlocked' : 'locked'} />
                                 </Card>
                             </Col>
-                            {/* </CardGroup> */}
-                        {/* </Col> */}
                     </Row>
 
                 </main>
