@@ -59,11 +59,17 @@ const Badges = () => {
             setScore(sc)
             if (score > 0) {
                 setBronzeLSF(true)
-            } else if (score >= 10) {
+            }
+
+            if (score >= 10) {
                 setSilverLSF(true)
-            } else if (score >= 30) {
+            }
+
+            if (score >= 30) {
                 setGoldLSF(true)
-            } else if (score >= 50) {
+            } 
+
+            if (score >= 50) {
                 setDiamondLSF(true)
             }
 
@@ -71,11 +77,17 @@ const Badges = () => {
             setScore2(sc2)
             if (score2 > 0) {
                 setBronzeM(true)
-            } else if (score2 >= 10) {
+            } 
+            
+            if (score2 >= 10) {
                 setSilverM(true)
-            } else if (score2 >= 30) {
+            }
+            
+            if (score2 >= 30) {
                 setGoldM(true)
-            } else if (score2 >= 50) {
+            }
+            
+            if (score2 >= 50) {
                 setDiamondM(true)
             }
         }
