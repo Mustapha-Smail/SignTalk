@@ -4,3 +4,7 @@
 .unlocked {
   filter: grayscale(0);
 }
+
+.Badge__body {
+  color: var(--color-bg)
+}

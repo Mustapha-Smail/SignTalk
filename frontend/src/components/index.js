@@ -17,7 +17,7 @@ export { default as Footer } from './Home/Footer/Footer.jsx'
 export { default as ImageContainer } from './elements/ImageContainer/ImageContainer.jsx'
 export { default as TextContainer } from './elements/TextContainer/TextContainer.jsx'
 export { default as ButtonContainer } from './elements/ButtonContainer/ButtonContainer.jsx'
-
+export { default as CardImgContainer } from './elements/CardImgContainer/CardImgContainer.jsx'
 
 /**
  * Containers for pages 

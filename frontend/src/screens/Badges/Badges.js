@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Card, CardGroup, CardImg, Col, Row } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import { Navbar } from '../../components'
+import { Navbar} from '../../components'
+import { CardImgContainer } from '../../components'
 
 import './Badges.css'
 
@@ -58,11 +59,11 @@ const Badges = () => {
             setScore(sc)
             if (score > 0) {
                 setBronzeLSF(true)
-            } else if (score > 10) {
+            } else if (score >= 10) {
                 setSilverLSF(true)
-            } else if (score > 30) {
+            } else if (score >= 30) {
                 setGoldLSF(true)
-            } else if (score > 50) {
+            } else if (score >= 50) {
                 setDiamondLSF(true)
             }
 
@@ -70,16 +71,15 @@ const Badges = () => {
             setScore2(sc2)
             if (score2 > 0) {
                 setBronzeM(true)
-            } else if (score > 10) {
+            } else if (score2 >= 10) {
                 setSilverM(true)
-            } else if (score > 30) {
+            } else if (score2 >= 30) {
                 setGoldM(true)
-            } else if (score > 50) {
+            } else if (score2 >= 50) {
                 setDiamondM(true)
             }
-
         }
-    }, [historyCount, navigate, score, userInfoFromStorage]);
+    }, [historyCount, navigate, score, score2, userInfoFromStorage]);
 
 
 
@@ -87,56 +87,29 @@ const Badges = () => {
         <>
             <div className="gradient__bg">  
                 <Navbar />
-                <main className='section__padding'>
+                <main className='section__padding Badge__body'>
 
                     <Row>   
-                            <Col sm={12} md={7} lg={4} xl={3} style={{padding: 50}}>
-                                <Card>
-                                    <CardImg src='/images/Bronze-signe-badge.png' className={bronzeLSF ? 'unlocked' : 'locked'} />
-                                </Card>
-                            </Col>
-                            <Col sm={12} md={7} lg={4} xl={3} style={{padding: 50}}>
-                                <Card>
-                                    <CardImg src='/images/Silver-signe-badge.png' className={silverLSF ? 'unlocked' : 'locked'} />
-                                </Card>
-                            </Col>
-                            <Col sm={12} md={6} lg={4} xl={3} style={{padding: 50}}>
-                                <Card>
-                                    <CardImg src='/images/Gold-signe-badge.png' className={goldLSF ? 'unlocked' : 'locked'} />
-                                </Card>
-                            </Col>
-                            <Col sm={12} md={6} lg={4} xl={3} style={{padding: 50}}>
-                                <Card>
-                                    <CardImg src='/images/Diamond-signe-badge.png' className={diamondLSF ? 'unlocked' : 'locked'} />
-                                </Card>
-                            </Col>
+                        <CardImgContainer imgSrc='/images/Bronze-signe-badge.png' text='Félicitation vous avez eu au moins 1 bonne réponse au jeu 4 mots 1 image' className={bronzeLSF ? 'unlocked' : 'locked'}/>
+
+                        <CardImgContainer imgSrc='/images/Silver-signe-badge.png' text='Félicitation vous avez eu au moins 10 bonnes réponses au jeu 4 mots 1 image' className={silverLSF ? 'unlocked' : 'locked'}/>
+
+                        <CardImgContainer imgSrc='/images/Gold-signe-badge.png' text='Félicitation vous avez eu au moins 30 bonnes réponses au jeu 4 mots 1 image' className={goldLSF ? 'unlocked' : 'locked'}/>
+
+                        <CardImgContainer imgSrc='/images/Diamond-signe-badge.png' text='Félicitation vous avez eu au moins 50 bonnes réponses au jeu 4 mots 1 image' className={diamondLSF ? 'unlocked' : 'locked'} />
                     </Row>
 
                     <Row>   
-                            <Col sm={12} md={7} lg={4} xl={3} style={{padding: 50}}>
-                                <Card>
-                                    <CardImg src='/images/Bronze-signe-badge.png' className={bronzeM ? 'unlocked' : 'locked'} />
-                                </Card>
-                            </Col>
-                            <Col sm={12} md={7} lg={4} xl={3} style={{padding: 50}}>
-                                <Card>
-                                    <CardImg src='/images/Silver-signe-badge.png' className={silverM ? 'unlocked' : 'locked'} />
-                                </Card>
-                            </Col>
-                            <Col sm={12} md={6} lg={4} xl={3} style={{padding: 50}}>
-                                <Card>
-                                    <CardImg src='/images/Gold-signe-badge.png' className={goldM ? 'unlocked' : 'locked'} />
-                                </Card>
-                            </Col>
-                            <Col sm={12} md={6} lg={4} xl={3} style={{padding: 50}}>
-                                <Card>
-                                    <CardImg src='/images/Diamond-signe-badge.png' className={diamondM ? 'unlocked' : 'locked'} />
-                                </Card>
-                            </Col>
-                    </Row>
+                        <CardImgContainer imgSrc='/images/Bronze-mot-badge.png' text='Félicitation vous avez eu au moins 1 bonnes réponses au jeu 4 images 1 mot' className={bronzeM ? 'unlocked' : 'locked'}/>
 
+                        <CardImgContainer imgSrc='/images/Silver-mot-badge.png' text='Félicitation vous avez eu au moins 10 bonnes réponses au jeu 4 images 1 mot' className={silverM ? 'unlocked' : 'locked'}/>
+
+                        <CardImgContainer imgSrc='/images/Gold-mot-badge.png' text='Félicitation vous avez eu au moins 30 bonnes réponses au jeu 4 images 1 mot' className={goldM ? 'unlocked' : 'locked'}/>   
+
+                        <CardImgContainer imgSrc='/images/Diamond-mot-badge.png' text='Félicitation vous avez eu au moins 50 bonnes réponses au jeu 4 images 1 mot' className={diamondM ? 'unlocked' : 'locked'} />
+                    </Row>
                 </main>
-            </div>
+            </div>  
         </>
     )
 }
