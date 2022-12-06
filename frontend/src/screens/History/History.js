@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, CardImg } from 'react-bootstrap'
 import { Navbar, HistoryCard, Message, HistoryCount } from '../../components'
 import './History.css'
 import { Link } from 'react-router-dom'
@@ -64,6 +64,7 @@ const History = () => {
         }
     }
 
+
     return (
         <>
             <Navbar />
@@ -91,7 +92,7 @@ const History = () => {
                                 <HistoryCard game={game} />
                             </Col>
                         ))}
-                    </Row>
+                    </Row>          
                 </>)}
             </main>
         </>
