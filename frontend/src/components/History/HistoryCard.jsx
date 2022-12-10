@@ -9,7 +9,7 @@ const HistoryCard = ({ game }) => {
         <Card.Img src='/images/header-img.png' />
       </Card.Header>
       <Card.Body>
-        <Link to={`/`}>
+        <Link to={`/quizz/${game.game.type.toLowerCase()}/${game._id}`}>
           <Card.Title as='div'>
             <strong>
               {game.game.type === 'quizzLSF'
