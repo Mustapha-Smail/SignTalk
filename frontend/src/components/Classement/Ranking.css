@@ -1,0 +1,7 @@
+table {
+  background-color: white;
+}
+
+.userPlayer {
+  background-color: var(--color-text);
+}
