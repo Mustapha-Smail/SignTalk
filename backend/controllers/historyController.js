@@ -78,16 +78,28 @@ const getHistory = asyncHandler(async (req, res) => {
                 : game.game.isCorrect ? count.quizzFR.correct++ : count.quizzFR.incorrect++
         })
 
-        if (count.quizzLSF.correct >= 10)
-        {
-                
-        }
-
         res.status(200).json({ historyGame, count })
     } else {
         res.status(404)
         throw new Error('User not found')
     }
+
+})
+
+// @desc    Get history by Id    
+// @route   GET /api/history/:id
+// @access  Private 
+const getHistoryById = asyncHandler(async (req, res) => {
+    const id = req.params.id
+
+    const historyGame = await History.findById(id)
+
+    if (!historyGame) {
+        res.status(500)
+        throw new Error('Internal Server Error')
+    }
+    res.status(200).json(historyGame)
+
 
 })
 
@@ -114,5 +126,6 @@ const deleteHistory = asyncHandler(async (req, res) => {
 export {
     archiveGame,
     getHistory,
+    getHistoryById,
     deleteHistory
 }
