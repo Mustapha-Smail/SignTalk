@@ -57,3 +57,8 @@ export { default as FormBoot } from './FormBoot/FormBoot'
  */
 export { default as HistoryCard } from './History/HistoryCard'
 export { default as HistoryCount } from './History/HistoryCount'
+
+/**
+ * Memory Elements
+ */
+export { default as MemoryContainer } from './Memory/MemoryContainer'

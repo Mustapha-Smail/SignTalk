@@ -30,6 +30,7 @@ const Links = ({ className }) => {
         <p><Link to='/search'>Rechercher</Link></p>
         <p><Link to='/decomposition'>Décomposer</Link></p>
         <p><Link to='/quizz'>Quizz</Link></p>
+        <p><Link to='/memory'>Memory</Link></p>
         {userInfo
           ?(
             <NavDropdown 
