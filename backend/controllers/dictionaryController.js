@@ -179,8 +179,15 @@ const getMemory = asyncHandler(async (req, res) => {
         throw new Error('Internal Server Error')
     }
 
+    // create a list of pairs
+
+    const extractedPairs = [];
+
+    randomPairs.forEach(pair => {
+        extractedPairs.push(pair.gloss, pair.videoId)
+    });
     // create a list from the randoms words 
-    const extractedWords = []
+    /*const extractedWords = []
 
     randomPairs.forEach(pair => {
         extractedWords.push(pair.gloss)
@@ -191,7 +198,7 @@ const getMemory = asyncHandler(async (req, res) => {
 
     randomPairs.forEach(pair => {
         extractedMultimdeia.push(pair.videoId)
-    });
+    });*/
 
     // create the quizz to return 
     /**
@@ -201,8 +208,9 @@ const getMemory = asyncHandler(async (req, res) => {
      * }
      */
     const memory = {
-        multimedia: extractedMultimdeia,
-        words: extractedWords,
+        //multimedia: extractedMultimdeia,
+        //words: extractedWords,
+        pair: extractedPairs,
         category : randomPair.category
     }
 
