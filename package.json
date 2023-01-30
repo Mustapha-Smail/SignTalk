@@ -1,6 +1,6 @@
 {
   "name": "signtalk",
-  "version": "1.0.0.alpha",
+  "version": "1.1.0",
   "description": "Application web d’apprentissage de langue des signes française",
   "main": "server.js",
   "type": "module",

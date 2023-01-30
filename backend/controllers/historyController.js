@@ -86,6 +86,51 @@ const getHistory = asyncHandler(async (req, res) => {
 
 })
 
+// @desc    Get scores of all user   
+// @route   POST /api/history/all
+// @access  Private 
+const getAllScores = asyncHandler(async (req, res) => {
+
+    const { gameType } = req.body
+
+    console.log(req.body);
+
+    const users = await User.find({}).select("nom , prenom")
+
+    if (users) {
+
+        const ids = []
+        users.forEach(user => {
+            ids.push(user._id)
+        })
+
+        const historyGame = await History.find({ userId: { $in: ids }, 'game.isCorrect': true, 'game.type': gameType }).select("userId  game.type game.isCorrect -_id")
+
+        const counts = historyGame.reduce((count, item) => (
+            count[item] = count[item] + 1 || 1
+            , count), {})
+
+        const score = Object.keys(counts).map(item => {
+            const userId = item.match(/"((.*))"/)[1];
+            const user = users.find(item => item._id == userId)
+
+            return { id: user._id, nom: user.nom, prenom: user.prenom, score: counts[item] }
+        })
+
+        const sortedScore = score.sort(function (a, b) {
+            return b.score - a.score
+        })
+
+
+        res.json(sortedScore)
+
+    } else {
+        res.status(404)
+        throw new Error('No user found')
+    }
+
+})
+
 // @desc    Get history by Id    
 // @route   GET /api/history/:id
 // @access  Private 
@@ -127,5 +172,6 @@ export {
     archiveGame,
     getHistory,
     getHistoryById,
-    deleteHistory
+    deleteHistory,
+    getAllScores
 }
