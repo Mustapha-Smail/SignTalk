@@ -18,6 +18,7 @@ export { default as ImageContainer } from './elements/ImageContainer/ImageContai
 export { default as TextContainer } from './elements/TextContainer/TextContainer.jsx'
 export { default as ButtonContainer } from './elements/ButtonContainer/ButtonContainer.jsx'
 export { default as CardImgContainer } from './elements/CardImgContainer/CardImgContainer.jsx'
+export { default as ImageContainerMemory } from './elements/ImageContainerMemory/ImageContainerMemory.jsx'
 
 /**
  * Containers for pages 

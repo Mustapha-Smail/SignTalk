@@ -4,6 +4,7 @@ import {
   ImageContainer,
   TextContainer,
   ButtonContainer,
+  ImageContainerMemory,
 } from '../../components'
 import { notif } from '../../utils'
 import { Dropdown } from 'react-bootstrap'
@@ -36,13 +37,25 @@ const MemoryContainer = () => {
   //const [flipped, setFlipped] = useState(Array(memory.words.length).fill(true))
   //const [flippedv, setFlippedv] = useState(Array(memory.multimedia.length).fill(true))
   const [flipped, setFlipped] = useState(Array(memory.pair.length).fill(true))
+  const [flippedi, setFlippedi] = useState(Array(memory.pair.length).fill(true))
   const [totalFlips, setTotalFlips] = useState(0);
 
-  const handleFlip = (index) => {
-    const newFlipped = [...flipped]
-    newFlipped[index] = !newFlipped[index]
-    setFlipped(newFlipped)
-    setTotalFlips(totalFlips + 1);
+  const handleFlip = (index, type) => {
+    console.log(`index: ${index}, type: ${type}`);
+    if(type === 'imagevideo' )
+    {
+      const newFlipped = [...flipped]
+      newFlipped[index] = !newFlipped[index]
+      setFlipped(newFlipped)
+      setTotalFlips(totalFlips + 1);console.log()
+    }
+    else if(type === 'imagemot'){
+      const newFlippedi = [...flippedi]
+      newFlippedi[index] = !newFlippedi[index]
+      setFlippedi(newFlippedi)
+      setTotalFlips(totalFlips + 1);console.log()
+    }
+
 
     if (totalFlips === 2) {
       //ce sont les mêmes
@@ -50,13 +63,6 @@ const MemoryContainer = () => {
       //différents
     }
   }
-
-
-  /*const flipVideo = (index) => {
-    const newFlipped = [...flippedv]
-    newFlipped[index] = !newFlipped[index]
-    setFlippedv(newFlipped)
-  }*/
 
 
   const getData = async () => {
@@ -86,7 +92,7 @@ const MemoryContainer = () => {
 
     //setFlipped(Array(memory.words.length).fill(true));
     //setFlippedv(Array(memory.multimedia.length).fill(false));
-    setFlipped(Array(memory.pair.length).fill(true));
+    setFlipped(Array(memory.pair.length).fill(false));
   }
 
   /*useEffect(() => {
@@ -104,7 +110,7 @@ const MemoryContainer = () => {
   //Permit the synchronization
   useEffect(() => {
     getData()
-  }, [difficulte])
+  }, [difficulte])  
 
   // Change the game difficulty
   const changeDifficulty = (diff) => {
@@ -112,6 +118,10 @@ const MemoryContainer = () => {
     getData()
   }
 
+  console.log(shuffled);
+
+
+  
   return (
     <>
       {<div className='quizzlsf__dropdown section__padding'>
@@ -136,16 +146,21 @@ const MemoryContainer = () => {
           onChange={(e) => notif(e, memory, getData, setChecked)}
         >
           {shuffled.map((pair, index) => (
-            <div className={`quizzfr__media-img${index} media-center`} onClick={() => handleFlip(index)}>
-              {flipped[index] ?  <ImageContainer videoId={pair} className={'quizzfr__img'}/> : <ImageContainer type={'image'} imgSrc={'/images/SIGN.png'} />}
-              <input
-                name={pair}
-                checked={checked}
-                type={'radio'}
-                value={pair}
-                onChange={(e) => notif(e, memory, getData, setChecked)}
-              />
-            </div>
+            <>
+              <div className={`quizzfr__media-img${index} media-center` } onClick={() => handleFlip(index, "imagevideo")} >
+                {flipped[index] ? <ImageContainer videoId={pair.videoId} className={'quizzfr__img'}/> : <ImageContainerMemory type={'imagevideo'} imgSrc={'/images/SIGN.png'}/>}
+                <input
+                  name={pair}
+                  checked={checked}
+                  type={'radio'}
+                  value={pair}
+                  onChange={(e) => notif(e, memory, getData, setChecked)}
+                />
+              </div>
+              <div className={`quizzfr__media-img${index} media-center` } onClick={() => handleFlip(index, "imagemot")} >
+                {flippedi[index] ? <TextContainer content={pair.gloss} /> : <ImageContainerMemory type={'imagemot'} imgSrc={'/images/SIGN.png'}/>}
+              </div>
+            </>
           ))}
           </div>
      {/*<div className='st__quizz-content'>

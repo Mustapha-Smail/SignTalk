@@ -181,11 +181,11 @@ const getMemory = asyncHandler(async (req, res) => {
 
     // create a list of pairs
 
-    const extractedPairs = [];
+    // const extractedPairs = [];
 
-    randomPairs.forEach(pair => {
-        extractedPairs.push(pair.gloss, pair.videoId)
-    });
+    // randomPairs.forEach(pair => {
+    //     extractedPairs.push({id: pair._id, gloss: pair.gloss, videoId: pair.videoId})
+    // });
     // create a list from the randoms words 
     /*const extractedWords = []
 
@@ -210,7 +210,7 @@ const getMemory = asyncHandler(async (req, res) => {
     const memory = {
         //multimedia: extractedMultimdeia,
         //words: extractedWords,
-        pair: extractedPairs,
+        pair: randomPairs,
         category : randomPair.category
     }
 
