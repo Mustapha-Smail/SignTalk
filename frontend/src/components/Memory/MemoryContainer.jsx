@@ -13,10 +13,25 @@ import './MemoryContainer.css'
 import { useParams } from 'react-router-dom'
 
 
-const shuffle =(array) => {
+const shuffle = (array) => {
+  console.log(array)
   const shuffledArray = array.slice().sort(() => Math.random() - 0.5)
+  console.log(shuffledArray)
   return shuffledArray
 }
+
+const separate = (pair) => {
+  const separatedArray = []; 
+
+  pair.forEach((pair, index) => {
+    separatedArray.push({index: index, value: pair.gloss, type: "mot", retourn: false});
+    separatedArray.push({index: index, value: pair.videoId, type: "video", retourn: false});
+  });
+
+  return separatedArray 
+}
+
+
 
 const MemoryContainer = () => {
   const params = useParams()
@@ -24,44 +39,71 @@ const MemoryContainer = () => {
   const id = params.id
 
   const [difficulte, setDifficulte] = useState('Difficulté')
-  const [checked, setChecked] = useState(false)
-  //const [shuffledWords, setShuffledWords] = useState([])
-  //const [shuffledvideo, setShuffledvideo] = useState([])
   const [shuffled, setShuffled] = useState([])
   const [memory, setMemory] = useState({
     //multimedia: [],
     //words: ['word_1', 'word_2', 'word_3', 'word_4'],
     pair: []
   })
+  
 
   //const [flipped, setFlipped] = useState(Array(memory.words.length).fill(true))
   //const [flippedv, setFlippedv] = useState(Array(memory.multimedia.length).fill(true))
   const [flipped, setFlipped] = useState(Array(memory.pair.length).fill(true))
   const [flippedi, setFlippedi] = useState(Array(memory.pair.length).fill(true))
   const [totalFlips, setTotalFlips] = useState(0);
+  const [firstcard, setfirstcard] = useState(-1);
+  const [selectedCards, setSelectedCards] = useState([]);
 
-  const handleFlip = (index, type) => {
+
+  const incrementFlip = () => {
+    setTotalFlips(totalFlips + 1);
+  }
+
+  const handleFlip = (index, type, id) => {
     console.log(`index: ${index}, type: ${type}`);
-    if(type === 'imagevideo' )
+    if(type === 'imagevideo' && !flipped[index])
     {
       const newFlipped = [...flipped]
       newFlipped[index] = !newFlipped[index]
       setFlipped(newFlipped)
-      setTotalFlips(totalFlips + 1);console.log()
+      incrementFlip()
+      if(firstcard === -1 )
+      {
+        setfirstcard(id);
+      }
+      setSelectedCards([...selectedCards, index]);
     }
-    else if(type === 'imagemot'){
+    else if(type === 'imagemot' && !flippedi[index]){
       const newFlippedi = [...flippedi]
       newFlippedi[index] = !newFlippedi[index]
       setFlippedi(newFlippedi)
-      setTotalFlips(totalFlips + 1);console.log()
+      incrementFlip()
+      if(firstcard === -1 )
+      {
+        setfirstcard(id);
+      }
+      setSelectedCards([...selectedCards, index])
     }
-
-
-    if (totalFlips === 2) {
+console.log(firstcard)
+console.log(id)
+    if (totalFlips === 1 && firstcard === id) {
       //ce sont les mêmes
-    } else {
-      //différents
+      console.log("je suis ici")
+      resetchoice()
+    } else if(totalFlips===1){
+      setFlipped(flipped.map((isFlipped, i) => (selectedCards.includes(i) ? false : isFlipped)));
+      setFlippedi(flippedi.map((isFlippedi, i) => (selectedCards.includes(i) ? false : isFlippedi)));
+      console.log("je suis ici hihihhi")
+      resetchoice()
     }
+  }
+
+
+  const resetchoice = () =>{
+    setTotalFlips(0);
+    setfirstcard(-1);
+    setSelectedCards([]);
   }
 
 
@@ -90,21 +132,16 @@ const MemoryContainer = () => {
       console.error(err)
     }
 
-    //setFlipped(Array(memory.words.length).fill(true));
-    //setFlippedv(Array(memory.multimedia.length).fill(false));
     setFlipped(Array(memory.pair.length).fill(false));
+    setFlippedi(Array(memory.pair.length).fill(false));
   }
 
-  /*useEffect(() => {
-    setShuffledWords(shuffle(memory.words))
-  }, [memory.words])*/
 
-  /*useEffect(() => {
-    setShuffledvideo(shuffle(memory.multimedia))
-  }, [memory.multimedia])*/
+
 
   useEffect(() => {
-    setShuffled(shuffle(memory.pair))
+    const newarray = separate(memory.pair)
+    setShuffled(shuffle(newarray))
   }, [memory.pair])
 
   //Permit the synchronization
@@ -118,7 +155,7 @@ const MemoryContainer = () => {
     getData()
   }
 
-  console.log(shuffled);
+  //console.log(shuffled);
 
 
   
@@ -141,43 +178,21 @@ const MemoryContainer = () => {
         </Dropdown>
       </div>}
       <div className='st__quizz'>
-        <div
-          className='quizzfr__media'
-          onChange={(e) => notif(e, memory, getData, setChecked)}
-        >
+        <div className='quizzfr__media'>
           {shuffled.map((pair, index) => (
-            <>
-              <div className={`quizzfr__media-img${index} media-center` } onClick={() => handleFlip(index, "imagevideo")} >
-                {flipped[index] ? <ImageContainer videoId={pair.videoId} className={'quizzfr__img'}/> : <ImageContainerMemory type={'imagevideo'} imgSrc={'/images/SIGN.png'}/>}
-                <input
-                  name={pair}
-                  checked={checked}
-                  type={'radio'}
-                  value={pair}
-                  onChange={(e) => notif(e, memory, getData, setChecked)}
-                />
+            <div key={index}>
+              {pair.type === "video" ? (
+              <div className={`quizzfr__media-img${index} media-center` } onClick={() => handleFlip(index, "imagevideo", pair.index)} >
+                {flipped[index] ? <ImageContainer videoId={pair.value} className={'quizzfr__img'}/> : <ImageContainerMemory type={'imagevideo'} imgSrc={'/images/SIGN.png'}/>}
               </div>
-              <div className={`quizzfr__media-img${index} media-center` } onClick={() => handleFlip(index, "imagemot")} >
-                {flippedi[index] ? <TextContainer content={pair.gloss} /> : <ImageContainerMemory type={'imagemot'} imgSrc={'/images/SIGN.png'}/>}
+              ) : (
+              <div className={`quizzfr__media-img${index} media-center` } onClick={() => handleFlip(index, "imagemot", pair.index)} >
+                {flippedi[index] ? <TextContainer content={pair.value} /> : <ImageContainerMemory type={'imagemot'} imgSrc={'/images/SIGN.png'}/>}
               </div>
-            </>
-          ))}
-          </div>
-     {/*<div className='st__quizz-content'>
-          {shuffled.map((word, index) => (
-            <div className={`st__quizz-word${index}`} onClick={() => handleFlip(index)}>
-              {flipped[index] ? <ImageContainer type={'image'} imgSrc={'/images/SIGN.png'} /> : <TextContainer content={word} />}
-              
-              <input
-                name={word}
-                checked={checked}
-                type={'radio'}
-                value={word}
-                 onChange={(e) => notif(e, memory, getData, setChecked)}
-              />
+              )}
             </div>
           ))}
-        </div>*/}
+          </div>
         <div className='st__quizz-button'>
           <ButtonContainer onClickMethod={getData} />
         </div>
