@@ -92,9 +92,11 @@ console.log(id)
       console.log("je suis ici")
       resetchoice()
     } else if(totalFlips===1){
+      setTimeout(() => {
       setFlipped(flipped.map((isFlipped, i) => (selectedCards.includes(i) ? false : isFlipped)));
       setFlippedi(flippedi.map((isFlippedi, i) => (selectedCards.includes(i) ? false : isFlippedi)));
       console.log("je suis ici hihihhi")
+      }, 2000)
       resetchoice()
     }
   }
