@@ -191,6 +191,15 @@ Cette feature donne à l'utilisateur l'accès à une page contenant les badges o
 
 Il peut ainsi débloquer certains badges en fonctions de son nombre de bonnes réponses.
 
+== V1.0
+=== Première itération (v1.1)
+
+* Feature - Système de classement global
+
+image:feature-ranking.jpeg[Wireframe_ranking,300,300]
+
+Cette fonctionnalité est un système de classement pour permettre aux utilisateurs de suivre leur progression par rapport aux autres utilisateurs de l'application.
+
 
 === Diagrames de séquence
 

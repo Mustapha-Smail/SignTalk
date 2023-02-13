@@ -60,6 +60,11 @@ export { default as HistoryCard } from './History/HistoryCard'
 export { default as HistoryCount } from './History/HistoryCount'
 
 /**
+ * Classement Elements
+ */
+export { default as Ranking } from './Classement/Ranking'
+
+/**
  * Memory Elements
  */
 export { default as MemoryContainer } from './Memory/MemoryContainer'
