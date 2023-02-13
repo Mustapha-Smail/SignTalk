@@ -41,6 +41,7 @@ const Links = ({ className }) => {
       <p>
         <Link to='/quizz'>Quizz</Link>
       </p>
+      <p><Link to='/memory'>Memory</Link></p>
       {userInfo ? (
         <NavDropdown title={accountIcon}>
           <LinkContainer to='/profile'>

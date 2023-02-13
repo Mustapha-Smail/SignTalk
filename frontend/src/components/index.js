@@ -18,6 +18,7 @@ export { default as ImageContainer } from './elements/ImageContainer/ImageContai
 export { default as TextContainer } from './elements/TextContainer/TextContainer.jsx'
 export { default as ButtonContainer } from './elements/ButtonContainer/ButtonContainer.jsx'
 export { default as CardImgContainer } from './elements/CardImgContainer/CardImgContainer.jsx'
+export { default as ImageContainerMemory } from './elements/ImageContainerMemory/ImageContainerMemory.jsx'
 
 /**
  * Containers for pages 
@@ -62,3 +63,8 @@ export { default as HistoryCount } from './History/HistoryCount'
  * Classement Elements
  */
 export { default as Ranking } from './Classement/Ranking'
+
+/**
+ * Memory Elements
+ */
+export { default as MemoryContainer } from './Memory/MemoryContainer'
