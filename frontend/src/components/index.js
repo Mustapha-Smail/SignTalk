@@ -73,4 +73,4 @@ export { default as MemoryContainer } from './Memory/MemoryContainer'
  * Hanged Elements
  */
 
-// export { default as Hanged } from './Hanged'
+export { default as HangedContainer } from './Hanged/HangedContainer'

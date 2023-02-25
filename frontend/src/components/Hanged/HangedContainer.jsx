@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./pendu.css";
+import "./HangedContainer.css";
 
-const PenduGame = () => {
+const HangedContainer = () => {
   const [word, setWord] = useState("");
   const [maskedWord, setMaskedWord] = useState("");
   const [usedLetters, setUsedLetters] = useState([]);
   const [guessesLeft, setGuessesLeft] = useState(7);
-  const [gameOver, setGameOver] = useState(false);
+  const [gameOver, setGameOver] = useState(false);  
 
   useEffect(() => {
     const getWord = async () => {
       try {
         const response = await axios.get(
-          "https://api.example.com/pendu/word"
+          "https://random-word-api.herokuapp.com/word"
         );
-        const word = response.data.word.toLowerCase();
+        const word = response.data[0];
         setWord(word);
         setMaskedWord("*".repeat(word.length));
       } catch (error) {
@@ -108,23 +108,23 @@ const PenduGame = () => {
 
   const renderPenduImage = () => {
     const imageIndex = 7 - guessesLeft;
-    const renderedImage = `pendu${imageIndex}.jpg`;
+    const renderedImage = `../../../public/images/hanged/game${imageIndex}.png`;
     return (
-    <div className="pendu-image-container">
-    <img src={renderedImage} alt={`Pendu avec ${imageIndex} erreurs`} />
-    </div>
+      <div className="pendu-image-container">
+        <img src={renderedImage} alt={`Pendu avec ${imageIndex} erreurs`} />
+      </div>
     );
-    };
-    
-    return (
+  };
+
+  return (
     <div className="pendu-container">
-    <h1>Jeu du Pendu</h1>
-    <div className="pendu-word">{maskedWord}</div>
-    {renderPenduImage()}
-    {renderGuessButtons()}
-    {renderMessage()}
+      <h1>Jeu du Pendu</h1>
+      <div className="pendu-word">{maskedWord}</div>
+      {renderPenduImage()}
+      {renderGuessButtons()}
+      {renderMessage()}
     </div>
-    );
-    };
-    
-    export default PenduGame;
+  );
+};
+
+export default HangedContainer;
