@@ -68,3 +68,9 @@ export { default as Ranking } from './Classement/Ranking'
  * Memory Elements
  */
 export { default as MemoryContainer } from './Memory/MemoryContainer'
+
+/**
+ * Hanged Elements
+ */
+
+// export { default as Hanged } from './Hanged'

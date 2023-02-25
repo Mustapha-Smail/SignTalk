@@ -1,0 +1,50 @@
+.pendu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.pendu-word {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.pendu-guess-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pendu-guess-button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  /* &:disabled {
+    background-color: lightgray;
+    cursor: default;
+  } */
+}
+
+.pendu-message {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pendu-image-container {
+  margin-bottom: 20px;
+}
+
+.pendu-image-container img {
+  max-width: 100%;
+  height: auto;
+}
