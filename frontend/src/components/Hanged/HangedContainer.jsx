@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./HangedContainer.css";
+import pendu from '../../components/Hanged/images/game0.png'
+import pendu1 from '../../components/Hanged/images/game1.png'
+import pendu2 from '../../components/Hanged/images/game2.png'
+import pendu3 from '../../components/Hanged/images/game3.png'
+import pendu4 from '../../components/Hanged/images/game4.png'
+import pendu5 from '../../components/Hanged/images/game5.png'
+import pendu6 from '../../components/Hanged/images/game6.png'
+import pendu7 from '../../components/Hanged/images/game7.png'
 import ImageContainer from "../elements/ImageContainer/ImageContainer";
 
 const HangedContainer = () => {
@@ -127,12 +135,36 @@ const HangedContainer = () => {
     }
   };
 
-  const renderPenduImage = () => {
+  const renderPenduImage = () => {  
     const imageIndex = 7 - guessesLeft;
-    const renderedImage = `../../components/Hanged/images/game${imageIndex}.png`;
+    var renderedImage = pendu
+    switch (imageIndex) {
+      case 1:
+        renderedImage = pendu1;
+        break;
+      case 2:
+        renderedImage = pendu2;
+        break;
+      case 3:
+        renderedImage = pendu3;
+        break;
+      case 4:
+        renderedImage = pendu4;
+        break;
+      case 5:
+        renderedImage = pendu5;
+        break;
+      case 6:
+        renderedImage = pendu6;
+        break;
+      case 7:
+        renderedImage = pendu7; 
+        break;
+    }    
+    
     return (
       <div className="pendu-image-container">
-        <img src={renderedImage} alt={`Pendu avec ${imageIndex} erreurs`} />
+        <img src={renderedImage} alt={`Pendu avec ${imageIndex} erreurs`}  />
       </div>
     );
   };
