@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './Hanged.css'
 import { HangedContainer, Navbar } from '../../components'
-import myImage from '../../../public/images/hanged/game1.png'
+import imageed from '../../components/Hanged/images/game0.png'
 
 const PENDU_IMAGES = [  "../../../public/images/hanged/game1.jpg",  "../../../public/images/hanged/game2.jpg",  "../../../public/images/hanged/game3.jpg",  "../../../public/images/hanged/game4.jpg",  "../../../public/images/hanged/game5.jpg",  "../../../public/images/hanged/game6.jpg",  "../../../public/images/hanged/game7.jpg",];
 
@@ -118,7 +118,8 @@ const Hanged = () => {
     <div>
       <Navbar/>
       <HangedContainer/>
-      <img src={myImage}></img>
+      {/* <img src='../../components/Hanged/images/game0.png'/> */}
+      <img src= { imageed } />
     </div>);
 };
 
