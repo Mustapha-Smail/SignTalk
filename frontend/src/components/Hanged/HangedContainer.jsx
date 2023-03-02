@@ -10,6 +10,7 @@ import pendu5 from '../../components/Hanged/images/game5.png'
 import pendu6 from '../../components/Hanged/images/game6.png'
 import pendu7 from '../../components/Hanged/images/game7.png'
 import ImageContainer from "../elements/ImageContainer/ImageContainer";
+import ButtonContainer from "../elements/ButtonContainer/ButtonContainer";
 
 const HangedContainer = () => {
   const [word, setWord] = useState("");
@@ -19,24 +20,9 @@ const HangedContainer = () => {
   const [guessesLeft, setGuessesLeft] = useState(7);
   const [gameOver, setGameOver] = useState(false);
 
-  // const getLetter = async (id) => {
-  //   try {
-  //       const { data } = await axios.get(`/api/alphabet/${id}`)
-  //       setLetter(data)
-  //   } catch (error) {
-  //       console.error(error)
-  //   }
-
   useEffect(() => {
     const getWord = async () => {
       try {
-
-        // const response = await axios.get(
-        //   "https://random-word-api.herokuapp.com/word"
-        //   );
-        // const word = response.data[0]
-        // setWord(word);
-        // setMaskedWord("*".repeat(word.length));
         const response = await axios.post('/api/dictionary/random')
         const id = response.data.id
         const { data } = await axios.get(`api/dictionary/${id}`)
@@ -121,15 +107,14 @@ const HangedContainer = () => {
       } else {
         return (
           <div className="pendu-message">
-            Dommage, vous avez perdu. Le mot était {word}.
-            <button onClick={handleRestart}>Rejouer</button>
+            Perdu ! Le mot était : {word} 
           </div>
         );
       }
     } else {
       return (
         <div className="pendu-message">
-          Il vous reste {guessesLeft} essais.
+          Il vous reste {guessesLeft} essais
         </div>
       );
     }
@@ -164,7 +149,7 @@ const HangedContainer = () => {
     
     return (
       <div className="pendu-image-container">
-        <img src={renderedImage} alt={`Pendu avec ${imageIndex} erreurs`}  />
+        <img class="pendu-image" src={renderedImage} alt={`Pendu avec ${imageIndex} erreurs`}  />
       </div>
     );
   };
@@ -180,12 +165,12 @@ const HangedContainer = () => {
 
   return (
     <div className="pendu-container">
-      <h1>Jeu du Pendu</h1>
       <div className="pendu-word">{maskedWord}</div>
       {renderPenduImage()}
       {renderVideo()}
       {renderGuessButtons()}
       {renderMessage()}
+      <ButtonContainer onClickMethod={handleRestart} />
     </div>
   );
 };
