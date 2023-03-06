@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
-import { Alphabet, Home, Learn, QuizzChoice, QuizzLSF, QuizzFR, Search, Decomposition, Login, Register, Profile, History, Badges, Classement } from './screens'
+import { Alphabet, Home, Learn, QuizzChoice, QuizzLSF, QuizzFR, Search, Decomposition, Login, Register, Profile, History, Badges, Classement, Memory } from './screens'
 
 const App = () => {
   return (
@@ -28,6 +28,7 @@ const App = () => {
           </Route>
           <Route path='' element={<QuizzChoice />}></Route>
         </Route>
+        <Route path='/memory' element={<Memory />}></Route>
       </Routes>
     </Router>
   )
