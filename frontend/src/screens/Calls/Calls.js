@@ -1,15 +1,29 @@
 import React, { useCallback, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { Navbar } from '../../components'
 import "./Calls.css"
 
 const Calls = () => {
+    const navigate = useNavigate()
     const domain = process.env.REACT_APP_DAILY_DOMAIN
     const id = process.env.REACT_APP_DAILY_ROOM_ID
 
     const getData = useCallback(async () => {
         try {
-            const response = await axios.get('/api/calls')
+            const userInfoFromStorage = JSON.parse(localStorage.getItem('userInfo'))
+            if (!userInfoFromStorage) {
+                navigate('/login')
+            }
+
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${userInfoFromStorage.token}`
+                }
+            }
+
+            const response = await axios.get('/api/calls', config)
 
             if (response.status === 200) {
                 const DAILY_ROOM_URL = `${domain}${id}`;
@@ -25,7 +39,7 @@ const Calls = () => {
                         },
                         showLeaveButton: true,
                         showFullscreenButton: true,
-                        userName: "Test"
+                        userName: userInfoFromStorage.prenom
 
                     }
                 ).join({ url: DAILY_ROOM_URL });
@@ -43,7 +57,7 @@ const Calls = () => {
         }
     }
         ,
-        [domain, id],
+        [domain, id, navigate],
     )
 
 

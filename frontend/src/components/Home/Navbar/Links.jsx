@@ -26,26 +26,31 @@ const Links = ({ className }) => {
       <p>
         <Link to='/'>Accueil</Link>
       </p>
+      <NavDropdown title='Apprentissage'>
+        <LinkContainer to='/alphabet'>
+          <NavDropdown.Item>Alphabet</NavDropdown.Item>
+        </LinkContainer>
+        <LinkContainer to='/search'>
+          <NavDropdown.Item>Rechercher</NavDropdown.Item>
+        </LinkContainer>
+        <LinkContainer to='/decomposition'>
+          <NavDropdown.Item>Décomposer</NavDropdown.Item>
+        </LinkContainer>
+      </NavDropdown>
+
+      <NavDropdown title='Jeux'>
+        <LinkContainer to='/quizz'>
+          <NavDropdown.Item>Quizz</NavDropdown.Item>
+        </LinkContainer>
+        <LinkContainer to='/memory'>
+          <NavDropdown.Item>Memory</NavDropdown.Item>
+        </LinkContainer>
+        <LinkContainer to='/hanged'>
+          <NavDropdown.Item>Pendu</NavDropdown.Item>
+        </LinkContainer>
+      </NavDropdown>
       <p>
-        <Link to='/learn'>Apprendre</Link>
-      </p>
-      <p>
-        <Link to='/alphabet'>Alphabet</Link>
-      </p>
-      <p>
-        <Link to='/search'>Rechercher</Link>
-      </p>
-      <p>
-        <Link to='/decomposition'>Décomposer</Link>
-      </p>
-      <p>
-        <Link to='/quizz'>Quizz</Link>
-      </p>
-      <p>
-        <Link to='/memory'>Memory</Link>
-      </p>
-      <p>
-        <Link to='/hanged'>Pendu</Link>
+        <Link to='/calls'>Chat Vidéo</Link>
       </p>
       {userInfo ? (
         <NavDropdown title={accountIcon}>
