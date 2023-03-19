@@ -266,7 +266,7 @@ image:Diagram-classement.png[Diagram_classement,300,300]
 
 * Diagramme de la feature du pendu
 
-image:Diagram-pendu.png[Diagram_pendu,300,300]
+image:Diagram-historique_badge.png[Diagram_pendu,300,300]
 
 === Diagramme de classe
 

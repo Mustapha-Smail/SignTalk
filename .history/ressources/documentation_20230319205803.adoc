@@ -211,12 +211,12 @@ Feature permettant a l'utilisateur de comparer ses progrès aux autres utilisate
 
 === Septième itération
 
-* Feature - Pendu 
+* Feature - Memory 
 
 
-image:feature-pendu.png[Wireframe_pendu,300,300]
+image:feature-memory.png[Wireframe_memory,300,300]
 
-Feature permettant à l'utilisateur de s'exercer au language des signes au travers du celèbre jeu du pendu.
+Feature permettant à l'utilisateur de s'exercer au language des signes au travers du celèbre jeu du memory.
 
 === Diagrames de séquence
 
@@ -256,17 +256,6 @@ image:Diagram-difficulte.png[Diagram_difficulte,300,300]
 
 image:Diagram-historique_badge.png[Diagram_historique_badge,300,300]
 
-* Diagramme de la feature de memory
-
-image:Diagram-memory.png[Diagram_memory,300,300]
-
-* Diagramme de la feature de classement
-
-image:Diagram-classement.png[Diagram_classement,300,300]
-
-* Diagramme de la feature du pendu
-
-image:Diagram-pendu.png[Diagram_pendu,300,300]
 
 === Diagramme de classe
 

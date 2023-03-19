@@ -258,15 +258,15 @@ image:Diagram-historique_badge.png[Diagram_historique_badge,300,300]
 
 * Diagramme de la feature de memory
 
-image:Diagram-memory.png[Diagram_memory,300,300]
+image:Diagram-connexion.png[Diagram_connexion,300,300]
 
 * Diagramme de la feature de classement
 
-image:Diagram-classement.png[Diagram_classement,300,300]
+image:Diagram-difficulte.png[Diagram_difficulte,300,300]
 
-* Diagramme de la feature du pendu
+* Diagramme des features pendu
 
-image:Diagram-pendu.png[Diagram_pendu,300,300]
+image:Diagram-historique_badge.png[Diagram_historique_badge,300,300]
 
 === Diagramme de classe
 
