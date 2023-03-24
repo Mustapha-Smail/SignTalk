@@ -11,6 +11,7 @@ import dictionaryRoute from './routes/dictionaryRoute.js'
 import alphabetRoute from './routes/alphabetRoute.js'
 import userRoute from './routes/userRoute.js'
 import historyRoute from './routes/historyRoute.js'
+import callsRoute from './routes/callsRoute.js'
 
 dotenv.config()
 
@@ -26,6 +27,7 @@ app.use('/api/dictionary', dictionaryRoute)
 app.use('/api/alphabet', alphabetRoute)
 app.use('/api/users', userRoute)
 app.use('/api/history', historyRoute)
+app.use('/api/calls', callsRoute)
 
 const __dirname = path.resolve()
 if (process.env.NODE_ENV === 'production') {
