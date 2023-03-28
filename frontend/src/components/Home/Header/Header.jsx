@@ -23,7 +23,7 @@ const Header = () => {
       </div>
 
       <div className="st__header-image">
-          <img src="/images/SIGN.png" alt="upn" /> <br></br>
+          <img src="/images/sign3.jpg" alt="upn" /> <br></br>
       </div>
     </div>
   )
