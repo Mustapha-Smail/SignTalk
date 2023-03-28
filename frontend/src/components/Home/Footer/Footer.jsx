@@ -13,7 +13,7 @@ const Footer = () => (
 
     <div className="st__footer-links">
       <div className="st__footer-links_logo">
-        <h1>SignTalk</h1> <br></br>
+      <img src="/images/logo.jpg" alt="upn" /> <br></br>
         <p>Un guide pour vous aider à vous épanouir linguistiquement!..</p>
       </div>
       

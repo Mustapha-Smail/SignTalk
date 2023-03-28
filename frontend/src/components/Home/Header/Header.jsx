@@ -23,7 +23,7 @@ const Header = () => {
       </div>
 
       <div className="st__header-image">
-        <img src="/images/header-img.png" alt='SignTalk Logo' />
+          <img src="/images/SIGN.png" alt="upn" /> <br></br>
       </div>
     </div>
   )
