@@ -13,9 +13,10 @@ const Footer = () => (
 
     <div className="st__footer-links">
       <div className="st__footer-links_logo">
-        <h1>SignTalk</h1>
-        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..</p>
+        <h1>SignTalk</h1> <br></br>
+        <p>Un guide pour vous aider à vous épanouir linguistiquement!..</p>
       </div>
+      
       <div className="st__footer-links_div">
         <h4>Liens</h4>
         <p>Accueil</p>
