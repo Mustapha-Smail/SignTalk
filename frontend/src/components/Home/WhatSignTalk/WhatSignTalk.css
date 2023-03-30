@@ -26,7 +26,9 @@
 .st__whatSignTalk-feature {
     display: flex;
 }
-
+.st__whatSignTalk-heading img{
+    width:20%;
+}
 /* Customizing feature component as per needs */
 .st__whatSignTalk-feature .st__features-container__feature {
     margin: 0;
@@ -43,16 +45,10 @@
     justify-content: space-between;
     align-items: center;
     
-    margin: 4rem 0 2rem;
+    margin: 1rem 10 1rem;
 }
 
-.st__whatSignTalk-heading h1 {
-    font-size: 34px;
-    line-height: 45px;
-    font-weight: 800;
-    font-family: var(--font-family);
-    max-width: 510px;
-}
+
 
 .st__whatSignTalk-heading p {
     font-family: var(--font-family);
@@ -62,7 +58,17 @@
     color: var(--color-subtext);
     cursor: pointer;
 }
+.st__whatSignTalk-heading h3 {
+width: 80%;
+text-align: center;
+margin-left: 8%;
 
+}
+.st__whatSignTalk-heading h1 {
+    font-size: 30;
+    text-align: center;
+    margin-left: 5%;
+    }
 .st__whatSignTalk-container {
     display: flex;
     flex-wrap: wrap;
@@ -111,6 +117,7 @@
     .st__whatSignTalk-heading h1 {
         font-size: 28px;
         line-height: 40px;
+      
     }
 }
 
