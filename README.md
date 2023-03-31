@@ -1,6 +1,7 @@
 # SignTalk
 
-Application web d’apprentissage de langue des signes française
+Application web d’apprentissage de langue des signes française qui
+sera un guide pour vous aider à vous épanouir linguistiquement!
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Mustapha-Smail/SignTalk/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Mustapha-Smail/SignTalk/tree/main)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/342e82a4609c4778ae54301239cea412)](https://www.codacy.com/gh/Mustapha-Smail/SignTalk/dashboard?utm_source=github.com&utm_medium=referral&utm_content=Mustapha-Smail/SignTalk&utm_campaign=Badge_Grade)

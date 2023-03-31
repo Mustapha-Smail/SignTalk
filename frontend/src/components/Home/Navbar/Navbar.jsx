@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="st__navbar-links">
         <div className="st__navbar-links_logo">
           <h1>
-            <Link to='/'> SignTalk </Link> 
+          <img src="/images/logo.png" alt="upn" />
           </h1>
         </div>
         <Links className={"st__navbar-links_container"}/>
